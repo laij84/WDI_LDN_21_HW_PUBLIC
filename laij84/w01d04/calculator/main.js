@@ -15,9 +15,13 @@ var calc = ""
   )};
 
 evaluate.addEventListener("click", function(event){
-  eval(calc);
+  if (calc==="") {
+    display.innerHTML = "no number";
+  }
+  else {
   calc = eval(calc);
-  display.innerHTML = eval(calc);
+  display.innerHTML = calc;
+  }
 });
 
 clear.addEventListener("click", function(event){
