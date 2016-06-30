@@ -1,13 +1,15 @@
 
 body {
   background-image: url("https://assets.about.me/background/users/r/o/b/robertsjason_1417301700_39.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #calculator {
   width: 400px;
   padding: 25px;
-  margin: 50px auto;
+  margin: 90px auto;
   border: 1px solid;
   border-radius: 30px;
   box-shadow: 3px 3px 3px;
@@ -22,8 +24,9 @@ body {
   font-size: 3em;
   text-align: right;
   font-family: 'Monoton', cursive;
-  background: #fff;
+  background: linear-gradient(#ffffff,#c1c1c1);
   overflow: auto;
+  box-shadow: 2px 2px 2px;
 }
 
 #buttons {
@@ -40,5 +43,9 @@ button {
   font-size: 2em;
   font-family: 'Monoton', cursive;
   box-shadow: 3px 3px 3px;
-  background: #fff;
+  background: linear-gradient(#626871, #81A1C1);
+}
+
+button:hover {
+  background: linear-gradient(#626871, #3399ff);
 }
