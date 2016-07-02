@@ -1,0 +1,38 @@
+
+body {
+  overflow: auto;
+}
+
+td {
+  width:150px;
+  height: 150px;
+  /*border: 1px solid black;*/
+  list-style: none;
+  text-align:center;
+  font-size: 4em;
+  border-radius: 10px;
+}
+
+tr.row1, tr.row2{
+  border-bottom: 1px solid black;
+}
+
+#grid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0px;
+}
+
+.xClass {
+  background-color: blue;
+}
+
+.oClass {
+background-color: red;
+}
