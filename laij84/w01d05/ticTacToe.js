@@ -4,7 +4,8 @@ var player = "X";
 var xScore =  0;
 var oScore =  0;
 var getXScore = document.getElementById("xScore");
-var get0Score = document.getElementById("oScore"); 
+var getOScore = document.getElementById("oScore");
+var resetGameButton = document.getElementById("resetGame"); 
 
 // Squares in Grid
 var squareA = document.getElementById("squareA");
@@ -19,19 +20,22 @@ var squareI = document.getElementById("squareI");
 
 for (var i = 0; i < square.length; i++) {
   square[i].addEventListener("click", function(event){
-        
-      if (player === "X") {
-        this.innerHTML = "X";
-        this.className = "xClass"
-        checkForWin(player);
-        player = "O";
-      }
+      
+      if (this.innerHTML === "") { 
 
-      else if (player === "O") {
-        this.innerHTML = "O";
-        this.className = "oClass"
-        checkForWin(player);
-        player = "X";
+        if (player === "X") {
+          this.innerHTML = "X";
+          this.className = "xClass";
+          checkForWin(player);
+          player = "O";
+        }
+
+        else if (player === "O") {
+          this.innerHTML = "O";
+          this.className = "oClass";
+          checkForWin(player);
+          player = "X";
+        }
       }
 
     });
@@ -100,6 +104,7 @@ function checkForWin(player) {
       squareI.innerHTML !== ""
       :
       alert("Draw");
+      clearBoard(); 
   }  
 };
 
@@ -115,9 +120,19 @@ function scoreTracker() {
     
   if (player === "X") {
     xScore = xScore+1;
+    getXScore.innerHTML = "X = " + xScore;
   }
     else if (player === "O") {
     oScore = oScore+1;
+    getOScore.innerHTML = "O = " + oScore;
   }
 };
+
+resetGameButton.addEventListener("click", function() {
+  clearBoard();
+  xScore = 0;
+  getXScore.innerHTML = "X = ";
+  oScore = 0;
+  getOScore.innerHTML = "O = ";
+});
 

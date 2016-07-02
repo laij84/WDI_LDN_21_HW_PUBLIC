@@ -1,6 +1,8 @@
 
 body {
-overflow: auto;
+background-image: url("http://www.intrawallpaper.com/static/images/White-Background-9B1.jpg");
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 #buttonWrapper {
@@ -25,6 +27,11 @@ h1 {
   font-family: 'Monoton', cursive;
 }
 
+#board td:hover {
+   color: rgba(255, 255, 255, 1);
+   box-shadow: 0 5px 15px rgba(97,175,194, .7);
+}
+
 tr.row1, tr.row2{
   border-bottom: 1px solid black;
 }
@@ -37,14 +44,28 @@ div#grid {
 }
 
 table {
-border-collapse: collapse;
-border-spacing: 0px;
+  border-collapse: collapse;
+  border-spacing: 0px;
 }
 
 .xClass {
   background-color: #6CB7AD;
+/*  transition: background-color 1.5s ease;*/
+  color: white;
+  animation: fadeSquare 1s ease;
 }
 
 .oClass {
-background-color: #F38F56;
+  background-color: #F38F56;
+  /*transition: background-color 1.5s ease;*/
+  color: white;
+  animation: fadeSquare 1s ease;
+}
+
+@keyframes fadeSquare {
+  from { opacity: 0;
+  }
+
+  to {opacity: 1;
+  }
 }
