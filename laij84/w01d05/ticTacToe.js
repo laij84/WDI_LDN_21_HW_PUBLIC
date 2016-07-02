@@ -138,5 +138,7 @@ resetGameButton.addEventListener("click", function() {
   getXScore.innerHTML = "X = ";
   oScore = 0;
   getOScore.innerHTML = "O = ";
+  drawScore = 0;
+  getDrawScore = "Draw = "
 });
 
