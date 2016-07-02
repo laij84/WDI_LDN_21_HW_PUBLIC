@@ -3,8 +3,10 @@ var square = document.getElementsByTagName("td");
 var player = "X";
 var xScore =  0;
 var oScore =  0;
+var drawScore = 0;
 var getXScore = document.getElementById("xScore");
 var getOScore = document.getElementById("oScore");
+var getDrawScore = document.getElementById("drawScore")
 var resetGameButton = document.getElementById("resetGame"); 
 
 // Squares in Grid
@@ -104,6 +106,8 @@ function checkForWin(player) {
       squareI.innerHTML !== ""
       :
       alert("Draw");
+      drawScore += 1;
+      getDrawScore.innerHTML = "Draw = "+drawScore;
       clearBoard(); 
   }  
 };

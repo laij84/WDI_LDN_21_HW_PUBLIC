@@ -1,21 +1,40 @@
+*:focus {
+  outline: none;
+}
 
 body {
 background-image: url("http://www.intrawallpaper.com/static/images/White-Background-9B1.jpg");
-background-size: cover;
+background-size: 100% 100%;
 background-repeat: no-repeat;
+min-height: 700px;
 }
 
 #buttonWrapper {
   margin: 0 auto;
   text-align:center;
 }
+
 button {
   font-size: 1em;
+  width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(#eeba30, #D6A72B);
+  box-shadow: 1px 1px 1px #8E6F1C;
+  text-transform: uppercase;
 }
 
 h1 {
   text-align:center;
+  font-weight: bold;
+  font-size: 2em;
 }
+
+h1, h2, p, button {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 
 #board td {
   width:150px;
@@ -46,6 +65,8 @@ div#grid {
 table {
   border-collapse: collapse;
   border-spacing: 0px;
+  width: 450px;
+  height: 450px;
 }
 
 .xClass {
