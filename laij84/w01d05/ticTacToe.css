@@ -1,25 +1,37 @@
 
 body {
-  overflow: auto;
+overflow: auto;
 }
 
-td {
+#buttonWrapper {
+  margin: 0 auto;
+  text-align:center;
+}
+button {
+  font-size: 1em;
+}
+
+h1 {
+  text-align:center;
+}
+
+#board td {
   width:150px;
   height: 150px;
-  /*border: 1px solid black;*/
   list-style: none;
   text-align:center;
-  font-size: 4em;
+  font-size: 6em;
   border-radius: 10px;
+  font-family: 'Monoton', cursive;
 }
 
 tr.row1, tr.row2{
   border-bottom: 1px solid black;
 }
 
-#grid {
+div#grid {
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -30,9 +42,9 @@ border-spacing: 0px;
 }
 
 .xClass {
-  background-color: blue;
+  background-color: #6CB7AD;
 }
 
 .oClass {
-background-color: red;
+background-color: #F38F56;
 }

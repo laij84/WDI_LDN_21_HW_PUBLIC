@@ -2,12 +2,31 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="ticTacToe.css">
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <title>Tic Tac Toe</title>
 </head>
 <body>
 
-<div id="grid">
+<h1>Tic Tac Toe</h1>
+<div id="buttonWrapper"><button>Clear Board</button></div>
+
+<div>
+<h2>Score Tracker</h2>
+
 <table>
+  <tr>
+    <td>X = </td>
+    <td id="xScore"></td>
+  </tr>
+  <tr>
+    <td>O = </td>
+    <td id="oScore"></td>
+  </tr>
+</table>
+</div>
+
+<div id="grid">
+<table id="board">
   <tr class="row1">
     <td id='squareA'></td>
     <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareB'></td>
@@ -31,5 +50,3 @@
 <script type="text/javascript" src="ticTacToe.js"></script>
 </body>
 </html>
-
-f
