@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="ticTacToe.css">
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <title>Tic Tac Toe</title>
+</head>
+<body>
+
+<h1>Tic Tac Toe</h1>
+<div id="scoreTracker">
+      <li id="xScore">X = 0</li>
+      <li id="oScore">O = 0</li>
+      <li id="drawScore">Draw = 0</li>
+</div>
+
+<div id="buttonWrapper"><button id="resetGame">Reset Game</button></div>
+<p id="playerTurn"></p>
+  
+    <div id="grid">
+      <table id="board">
+        <tr class="row1">
+          <td id='squareA'></td>
+          <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareB'></td>
+          <td id='squareC'></td>
+        </tr>
+
+        <tr class="row2">
+          <td id='squareD'></td>
+          <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareE'></td>
+          <td id='squareF'></td>
+        </tr> 
+
+        <tr>
+          <td id='squareG'></td>
+          <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareH'></td>
+          <td id='squareI'></td>
+        </tr>
+      </table>
+    </div>
+
+<script type="text/javascript" src="ticTacToe.js"></script>
+</body>
+</html>
