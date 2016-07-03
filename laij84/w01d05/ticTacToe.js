@@ -1,12 +1,13 @@
 console.log("JS Loaded");
 var square = document.getElementsByTagName("td");
 var player = "X";
+var playerTurn = document.getElementById("playerTurn");
 var xScore =  0;
 var oScore =  0;
 var drawScore = 0;
 var getXScore = document.getElementById("xScore");
 var getOScore = document.getElementById("oScore");
-var getDrawScore = document.getElementById("drawScore")
+var getDrawScore = document.getElementById("drawScore");
 var resetGameButton = document.getElementById("resetGame"); 
 
 // Squares in Grid
@@ -20,6 +21,8 @@ var squareG = document.getElementById("squareG");
 var squareH = document.getElementById("squareH");
 var squareI = document.getElementById("squareI");
 
+playerTurn.innerHTML = "Click on a square to start the game." + " It's player " + player +"'s turn."
+
 for (var i = 0; i < square.length; i++) {
   square[i].addEventListener("click", function(event){
       
@@ -28,6 +31,7 @@ for (var i = 0; i < square.length; i++) {
         if (player === "X") {
           this.innerHTML = "X";
           this.className = "xClass";
+          playerTurn.innerHTML = "It's player O's turn.";
           checkForWin(player);
           player = "O";
         }
@@ -35,6 +39,7 @@ for (var i = 0; i < square.length; i++) {
         else if (player === "O") {
           this.innerHTML = "O";
           this.className = "oClass";
+          playerTurn.innerHTML = "It's player X's turn.";
           checkForWin(player);
           player = "X";
         }
@@ -105,7 +110,7 @@ function checkForWin(player) {
       squareH.innerHTML !== "" &&
       squareI.innerHTML !== ""
       :
-      alert("Draw");
+      alert("It's a draw!");
       drawScore += 1;
       getDrawScore.innerHTML = "Draw = "+drawScore;
       clearBoard(); 
@@ -135,10 +140,14 @@ function scoreTracker() {
 resetGameButton.addEventListener("click", function() {
   clearBoard();
   xScore = 0;
-  getXScore.innerHTML = "X = ";
+  getXScore.innerHTML = "X = 0";
   oScore = 0;
-  getOScore.innerHTML = "O = ";
+  getOScore.innerHTML = "O = 0";
   drawScore = 0;
-  getDrawScore = "Draw = "
+  getDrawScore.innerHTML = "Draw = 0";
+  playerTurn.innerHTML = "Click on a square to start the game." + " It's player " + player +"'s turn."
 });
+
+
+
 

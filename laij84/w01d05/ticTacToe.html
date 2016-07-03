@@ -9,36 +9,45 @@
 <body>
 
 <h1>Tic Tac Toe</h1>
+
 <div id="buttonWrapper"><button id="resetGame">Reset Game</button></div>
+<p id="playerTurn"></p>
+  
+  <div id="container">
+    <div id="scoreTracker">
+      <h2>Score Tracker</h2>
+      <p id="xScore">X = 0</p>
+      <p id="oScore">O = 0</p>
+      <p id="drawScore">Draw = 0</p>
+      <br>
+      <br>
+    </div>
 
-<div>
-<h2>Score Tracker</h2>
+    <div id="grid">
+    <table id="board">
+      <tr class="row1">
+        <td id='squareA'></td>
+        <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareB'></td>
+        <td id='squareC'></td>
+      </tr>
 
-<p id="xScore">X = </p>
-<p id="oScore">O = </p>
-<p id="drawScore">Draw = </p>
+      <tr class="row2">
+        <td id='squareD'></td>
+        <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareE'></td>
+        <td id='squareF'></td>
+      </tr> 
 
-<div id="grid">
-<table id="board">
-  <tr class="row1">
-    <td id='squareA'></td>
-    <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareB'></td>
-    <td id='squareC'></td>
-  </tr>
+      <tr>
+        <td id='squareG'></td>
+        <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareH'></td>
+        <td id='squareI'></td>
+      </tr>
+    </table>
+    </div>
+  
+  </div>
 
-  <tr class="row2">
-    <td id='squareD'></td>
-    <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareE'></td>
-    <td id='squareF'></td>
-  </tr> 
 
-  <tr>
-    <td id='squareG'></td>
-    <td style="border-left: 1px solid #5D5C5B; border-right: 1px solid #5D5C5B" id='squareH'></td>
-    <td id='squareI'></td>
-  </tr>
-</table>
-</div>
 
 <script type="text/javascript" src="ticTacToe.js"></script>
 </body>

@@ -9,9 +9,10 @@ background-repeat: no-repeat;
 min-height: 700px;
 }
 
-#buttonWrapper {
+#buttonWrapper, #playerTurn {
   margin: 0 auto;
-  text-align:center;
+  text-align: center;
+  padding: 10px 0px;
 }
 
 button {
@@ -34,7 +35,18 @@ h1, h2, p, button {
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  font-size: 1.5em;
+}
 
+p {
+  font-size: 1.2em;
+  margin:0px;
+}
+
+#scoreTracker {
+  padding-left: 50px;
+}
 
 #board td {
   width:150px;
@@ -57,7 +69,7 @@ tr.row1, tr.row2{
 
 div#grid {
   position: fixed;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -65,20 +77,19 @@ div#grid {
 table {
   border-collapse: collapse;
   border-spacing: 0px;
-  width: 450px;
-  height: 450px;
+  width: 458px;
+  height: 458px;
+  margin: 0 auto;
 }
 
 .xClass {
   background-color: #6CB7AD;
-/*  transition: background-color 1.5s ease;*/
   color: white;
   animation: fadeSquare 1s ease;
 }
 
 .oClass {
   background-color: #F38F56;
-  /*transition: background-color 1.5s ease;*/
   color: white;
   animation: fadeSquare 1s ease;
 }
@@ -90,3 +101,4 @@ table {
   to {opacity: 1;
   }
 }
+
