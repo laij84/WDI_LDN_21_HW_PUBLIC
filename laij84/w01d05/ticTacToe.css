@@ -39,21 +39,17 @@ h2 {
   font-size: 1.5em;
 }
 
-p {
-  font-size: 1.2em;
-  margin:0px;
-}
-
 #scoreTracker {
-  padding-left: 50px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #board td {
-  width:150px;
-  height: 150px;
+  width:120px;
+  height: 120px;
   list-style: none;
   text-align:center;
-  font-size: 6em;
+  font-size: 4em;
   border-radius: 10px;
   font-family: 'Monoton', cursive;
 }
@@ -68,18 +64,34 @@ tr.row1, tr.row2{
 }
 
 div#grid {
-  position: fixed;
+  /*position: fixed;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+  margin: 0 auto;
+  text-align:center;
 }
 
-table {
+#grid table {
   border-collapse: collapse;
   border-spacing: 0px;
-  width: 458px;
-  height: 458px;
+  width: 368px;
+  height: 368px;
   margin: 0 auto;
+}
+
+#scoreTracker li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 0 auto;
+  list-style: none;
+  display: inline;
+  padding: 0px 20px;
+}
+#playerTurn {
+font-size: 1.2em;
+padding-bottom: 20px
 }
 
 .xClass {
