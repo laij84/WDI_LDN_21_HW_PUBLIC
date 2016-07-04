@@ -1,7 +1,13 @@
 console.log("js loaded!");
 
+var computerScoreDisplay = document.getElementById("computerScore");
+var playerScoreDisplay =  document.getElementById("playerScore");
+var drawScoreDisplay = document.getElementById("drawScore");
+
+
 var computerScore = 0;
 var playerScore = 0;
+var drawScore = 0;
 
 var globalComputerHand = "";
 var globalPlayerHand = "";
@@ -58,6 +64,7 @@ function checkForWin() {
     case globalPlayerHand === "hand1" && globalComputerHand === "hand1"
     :
     alert("It's a draw!");
+    drawScore += 1;
     break;
     case globalPlayerHand === "hand1" && globalComputerHand === "hand2"
     :
@@ -72,6 +79,7 @@ function checkForWin() {
     case globalPlayerHand === "hand2" && globalComputerHand === "hand2"
     :
     alert("It's a draw!");
+    drawScore += 1;
     break;
     case globalPlayerHand === "hand2" && globalComputerHand === "hand3"
     :
@@ -86,6 +94,7 @@ function checkForWin() {
     case globalPlayerHand === "hand3" && globalComputerHand === "hand3"
     :
     alert("It's a draw!");
+    drawScore += 1;
     break;
     case globalPlayerHand === "hand3" && globalComputerHand === "hand1"
     :
@@ -97,6 +106,11 @@ function checkForWin() {
     break;
 
   }
+
+  playerScoreDisplay.innerHTML = "Player = " + playerScore;
+  computerScoreDisplay.innerHTML = "Computer = " + computerScore;
+  drawScoreDisplay.innerHTML = "Draw = " + drawScore;
+
 }
 
 
