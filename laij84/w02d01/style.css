@@ -1,0 +1,31 @@
+
+div#computerChoice {
+  height:100px;
+  width:100px;
+}
+
+.hand1{
+background-image: url("./rock.png");
+background-size: 100px 100px;
+height:100px;
+width: 100px;
+display: inline-block;
+margin: 0 50px;
+}
+.hand2{
+  background-image: url("./paper.png");
+  background-size: 100px 100px;
+  height:100px;
+  width: 100px;
+  display: inline-block;
+  margin: 0 50px;
+}
+
+.hand3{
+  background-image: url("./scissors.png");
+  background-size: 100px 100px;
+  height:100px;
+  width: 100px;
+  display: inline-block;
+  margin: 0 50px;
+}
