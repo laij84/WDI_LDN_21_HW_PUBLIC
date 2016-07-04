@@ -69,10 +69,12 @@ function checkForWin() {
     case globalPlayerHand === "hand1" && globalComputerHand === "hand2"
     :
     alert("You lose! Paper beats rock!");
+    computerScore += 1;
     break;
     case globalPlayerHand === "hand1" && globalComputerHand === "hand3"
     :
     alert("You win! Rock beats scissors!");
+    playerScore += 1;
     break;
 
     //cases if player selects paper (hand2)
@@ -84,10 +86,12 @@ function checkForWin() {
     case globalPlayerHand === "hand2" && globalComputerHand === "hand3"
     :
     alert("You lose! Scissors beats paper!");
+    computerScore += 1;
     break;
     case globalPlayerHand === "hand2" && globalComputerHand === "hand1"
     :
     alert("You win! Paper beats rock!");
+    playerScore += 1;
     break;
 
     //cases if player selects scissors (hand3)
@@ -99,10 +103,12 @@ function checkForWin() {
     case globalPlayerHand === "hand3" && globalComputerHand === "hand1"
     :
     alert("You lose! Rock beats paper!");
+    computerScore += 1;
     break;
     case globalPlayerHand === "hand3" && globalComputerHand === "hand2"
     :
     alert("You win! Scissors beats paper!");
+    playerScore += 1;
     break;
 
   }
