@@ -1,32 +1,76 @@
+*:focus{
+outline:none;
+}
+
 body {
-  background-image:url(http://wallpaperlayer.com/img/2015/10/daft-punk-wallpaper-2104-2259-hd-wallpapers.jpg);
+  background-image:url(http://wallpoper.com/images/00/29/90/38/daft-punk_00299038.png);
   background-size:cover;
 }
 
 #soundBoard {
   height: 500px;
   width: 500px;
-  border: 1px solid black;
-  background-color:red;
+  border: 0px;
 }
 
 table {
-  margin: 0 auto;
+  margin: 0 50%;
   text-align:center;
 }
 
 table, td, tr{
   border-collapse: collapse;
   border-spacing: 0px;
+  border:0px;
 
 }
 
 td {
-  border: 1px solid black;
   width:25%;
   height:25%;
+  font-family: daftPunk;
+  font-size: 1.5em;
+  background: linear-gradient(#F9A114,#FBC672);
+  -webkit-box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+  -moz-box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+  box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+  border-radius: 100%;
+  margin: 5px;
+}
+
+td:hover, button:hover {
+  background: linear-gradient(#00C3FF,#F9669A);
 }
 
 h1 {
+  width:500px;
+  display:inline-block;
   text-align:center;
+  margin: 20px 50%;
+  font-family: daftPunk;
+  font-size:3em;
 }
+
+button {
+  width:500px;
+  height: 60px;
+  display:inline-block;
+  text-align: center;
+  border-radius: 50px;
+  margin: 20px 50%;
+  font-family: daftPunk;
+  font-size:2em;
+  background: linear-gradient(black,#191919);
+  color:white;
+  -webkit-box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+  -moz-box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+  box-shadow: 30px 46px 112px -20px rgba(0,0,0,0.75);
+}
+
+
+@font-face {
+    font-family: daftPunk;
+    src: url(daft_font.ttf);
+}
+
+
