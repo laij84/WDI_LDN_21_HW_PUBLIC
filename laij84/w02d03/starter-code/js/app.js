@@ -10,36 +10,81 @@
 //loop through array of objects
 $(function(){
 
-  // $(window.tweets).each(function(i){
+  $(window.tweets).each(function(i){
 
-  //   var $userThumbnail = window.tweets[i].user_thumbnail;
-  //   var $createdAt = window.tweets[i].created_at;
-  //   var $tweetText = window.tweets[i].text;
-  //   var $userName = window.tweets[i].name;
-  //   var $screenName = window.tweets[i].screen_name;
+    var $userThumbnail = window.tweets[i].user_thumbnail;
+    var $createdAt = window.tweets[i].created_at;
+    var $tweetText = window.tweets[i].text;
+    var $userName = window.tweets[i].name;
+    var $screenName = window.tweets[i].screen_name;
 
-  //   // console.log($screenName);
+    // console.log($screenName);
 
-  //   $('.stream-items').append(
+    $('.stream-items').append(
 
-  //       '<div class="tweet">' +
-  //         '<a href="#">' +
-  //           '<img src="' + $userThumbnail + '" alt="User image goes here.">'+
-  //         '</a>'+
-  //         '<div class="content">'+
-  //           '<strong class="fullname">'+$userName+'</strong>'+
-  //           '<span>&rlm; </span>'+
-  //           '<span>@</span><b>'+$screenName+'</b>'+
-  //           '&nbsp;&middot;&nbsp;'+
-  //           '<small class="time">'+
-  //             $createdAt+
-  //           '</small>'+
-  //          '<p>'+$tweetText+'</p>'+
-  //         '</div>'+
-  //       '</div>'+
-  //     '</li>'
-  //   );
+        '<div class="tweet">' +
+          '<a href="#">' +
+            '<img src="' + $userThumbnail + '" alt="User image goes here.">'+
+          '</a>'+
+          '<div class="content">'+
+            '<strong class="fullname">'+$userName+'</strong>'+
+            '<span>&rlm; </span>'+
+            '<span>@</span><b>'+$screenName+'</b>'+
+            '&nbsp;&middot;&nbsp;'+
+            '<small class="time">'+
+              $createdAt+
+            '</small>'+
+           '<p>'+$tweetText+'</p>'+
+          '</div>'+
+        '</div>'+
+      '</li>'
+    );
 
-  // });
+  });
+
+
+      
+
+     $("input").on("click", function(event) {
+      event.preventDefault();
+      var $newTweet = $("#new-tweet-input").val();
+      var $dateTime = $.now();
+       console.log($newTweet);
+
+
+       $('.stream-items').prepend(
+
+               '<div class="tweet">' +
+                 '<a href="#">' +
+                   '<img src="' + '" alt="User image goes here.">'+
+                 '</a>'+
+                 '<div class="content">'+
+                   '<strong class="fullname">'+'Jason'+'</strong>'+
+                   '<span>&rlm; </span>'+
+                   '<span>@</span><b>'+'Jason'+'</b>'+
+                   '&nbsp;&middot;&nbsp;'+
+                   '<small class="time">'+
+                     $dateTime+
+                   '</small>'+
+                  '<p>'+$newTweet+'</p>'+
+                 '</div>'+
+               '</div>'+
+             '</li>'
+           );
+       
+     });
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
