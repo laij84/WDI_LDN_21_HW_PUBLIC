@@ -18,61 +18,64 @@ $(function(){
     var $userName = window.tweets[i].name;
     var $screenName = window.tweets[i].screen_name;
 
+    var readableDate = new Date($createdAt);
+
     // console.log($screenName);
 
     $('.stream-items').append(
 
-        '<div class="tweet">' +
-          '<a href="#">' +
-            '<img src="' + $userThumbnail + '" alt="User image goes here.">'+
-          '</a>'+
-          '<div class="content">'+
-            '<strong class="fullname">'+$userName+'</strong>'+
-            '<span>&rlm; </span>'+
-            '<span>@</span><b>'+$screenName+'</b>'+
-            '&nbsp;&middot;&nbsp;'+
-            '<small class="time">'+
-              $createdAt+
-            '</small>'+
-           '<p>'+$tweetText+'</p>'+
-          '</div>'+
-        '</div>'+
+      '<div class="tweet">' +
+      '<a href="#">' +
+      '<img src="' + $userThumbnail + '" alt="User image goes here.">'+
+      '</a>'+
+      '<div class="content">'+
+      '<strong class="fullname">'+$userName+'</strong>'+
+      '<span>&rlm; </span>'+
+      '<span>@</span><b>'+$screenName+'</b>'+
+      '&nbsp;&middot;&nbsp;'+
+      '<small class="time">'+
+      readableDate.toLocaleString()+
+      '</small>'+
+      '<p>'+$tweetText+'</p>'+
+      '</div>'+
+      '</div>'+
       '</li>'
-    );
+      );
 
   });
 
 
-      
-
-     $("input").on("click", function(event) {
+  $("#new-tweet-input").attr('maxlength','140');    
+  
+    $("input").on("click", function(event) {
       event.preventDefault();
-      var $newTweet = $("#new-tweet-input").val();
-      var $dateTime = $.now();
-       console.log($newTweet);
+      var $newTweet = $("#new-tweet-input");
+      var $dateTime = new Date();
 
+      if($newTweet !== "") {
+        $('.stream-items').prepend(
 
-       $('.stream-items').prepend(
+         '<div class="tweet">' +
+         '<a href="#">' +
+         '<img src="' +'http://facehoff.herokuapp.com/50/50'+ '" alt="User image goes here.">'+
+         '</a>'+
+         '<div class="content">'+
+         '<strong class="fullname">'+'Jason'+'</strong>'+
+         '<span>&rlm; </span>'+
+         '<span>@</span><b>'+'Jason'+'</b>'+
+         '&nbsp;&middot;&nbsp;'+
+         '<small class="time">'+
+         $dateTime.toLocaleString()+
+         '</small>'+
+         '<p>'+$newTweet.val()+'</p>'+
+         '</div>'+
+         '</div>'+
+         '</li>'
+        );
+        $newTweet.val("");
+      }
+    });
 
-               '<div class="tweet">' +
-                 '<a href="#">' +
-                   '<img src="' + '" alt="User image goes here.">'+
-                 '</a>'+
-                 '<div class="content">'+
-                   '<strong class="fullname">'+'Jason'+'</strong>'+
-                   '<span>&rlm; </span>'+
-                   '<span>@</span><b>'+'Jason'+'</b>'+
-                   '&nbsp;&middot;&nbsp;'+
-                   '<small class="time">'+
-                     $dateTime+
-                   '</small>'+
-                  '<p>'+$newTweet+'</p>'+
-                 '</div>'+
-               '</div>'+
-             '</li>'
-           );
-       
-     });
 
 
 });
