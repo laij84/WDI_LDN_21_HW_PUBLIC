@@ -1,7 +1,9 @@
+//named the file index.js instead of app.js in nodemon, don't know how to change it so renamed this file index.js so it would work. 
+
 // Require the stuff we need
 var express = require('express');
 var morgan = require('morgan');
-// var expressLayouts = require('express-ejs-layouts');
+var expressLayouts = require('express-ejs-layouts');
 
 // Build the app
 var app = express();
@@ -14,26 +16,28 @@ app.use(express.static(__dirname + '/public'));
 
 // Set EJS as the app's templating engine
 app.set('view engine', 'ejs');
-// app.set('layout', 'myLayout'); // defaults to 'layout' 
+app.set('layout', 'myLayout'); //sets the default layout to myLayout.ejs
 
 // Logging middleware
 app.use(morgan());
 
-// app.use(expressLayouts);
-// app.use(app.router);
+app.use(expressLayouts);
+// app.use(app.router); //removed this as it crashes nodemon
 
 //request handler
 app.get('/', function(req, res) {
-  res.render('index', { message: randomSentence()});
+  res.render('index', { 
+    title: "Inebriated Quotes",
+    message: randomSentence(),
+  });
 });
 
 app.get('/about', function(req, res) {
-  res.render('index', { message: 'About this site'});
+  res.render('index', { 
+    title: "About This Site", 
+    message: 'This site features random quotes by famous drunkards.'
+  });
 });
-
-// app.get('/', function(req, res){
-//   res.render('aView', { layout: 'someSpecificLayout' });
-// });
 
 app.get('*', function(req,res) {
   res.status(404).end("Error: Page Not Found");
@@ -53,13 +57,20 @@ var sentenceArray = [
 "You're not drunk if you can lie on the floor without holding on. - Dean Martin",
 "I drink too much. The last time I gave a urine sample it had an olive in it. - Rodney Dangerfield",
 "Here’s to alcohol, the cause of, and solution to, all life’s problems. - The Simpsons",
- "Time is never wasted when you’re wasted all the time. - Catherine Zandonella",
+"Time is never wasted when you’re wasted all the time. - Catherine Zandonella",
+"In wine there is wisdom, in beer there is freedom, in water there is bacteria. - Benjamin Franklin"
 ];
 
 function randomSentence() {
   var randomIndex = Math.floor(Math.random()*sentenceArray.length);
   return sentenceArray[randomIndex];
 }
+
+
+
+
+
+
 
 
 
