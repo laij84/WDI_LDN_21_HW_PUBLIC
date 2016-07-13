@@ -4,14 +4,16 @@
 <% include ./partials/head %>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
-  <title><% if(title){ %>
-  <%= title %>
-<% } %></title>
+  <title><%=title%></title>
 </head>
 <body>
 <% include ./partials/header %>
 
-<h1><%= title %></h1>
+  <h1>
+  <% if(title){ %>
+    <%= title %>
+  <% } %>
+  </h1>
 <div id="message">
 <% if(message){ %>
   <%= message %>

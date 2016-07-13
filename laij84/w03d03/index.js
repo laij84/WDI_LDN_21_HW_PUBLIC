@@ -25,19 +25,22 @@ app.use(expressLayouts);
 // app.use(app.router); //removed this as it crashes nodemon
 
 //request handler
+
+app.get('/about', function(req, res) {
+  res.render('index', { 
+    title: 'About This Website',
+    message: 'This website features random quotes from famous drunkards.',
+  });
+});
+
 app.get('/', function(req, res) {
   res.render('index', { 
-    title: "Inebriated Quotes",
+    title: 'Inebriated Quotes',
     message: randomSentence(),
   });
 });
 
-app.get('/about', function(req, res) {
-  res.render('index', { 
-    title: "About This Site", 
-    message: 'This site features random quotes by famous drunkards.'
-  });
-});
+
 
 app.get('*', function(req,res) {
   res.status(404).end("Error: Page Not Found");
