@@ -1,6 +1,6 @@
 var router = require('express').Router();
 
-var quotes = [
+var quotesArray = [
   {
     id:0,
     author: "Winston Churchill",
@@ -50,12 +50,14 @@ router.get("/", function(req, res) {
   res.redirect("/quotes");
 });
 
+// Same as Index Page?
 router.get("/quotes", function(req, res) {
-  res.render("quotes/index");
+  res.render("quotes/index", {quotesArray: quotesArray});
 });
 
-router.get("/quotes", function(req, res) {
-  res.render("quotes/index");
+router.get("/quotes/:id", function(req, res) {
+  var id = req.params.id;
+  res.render("quotes/index", { quoteId: quotesArray[id] });
 });
 
 router.get("/quotes/new", function(req, res) {

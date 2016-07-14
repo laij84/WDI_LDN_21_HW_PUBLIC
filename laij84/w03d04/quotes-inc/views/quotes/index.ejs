@@ -1,8 +1,10 @@
 <ul id="quotes">
   <li>
     <blockquote>
-      <p>A hard-coded quote</p>
-      <footer>A hard-coded citation</footer>
+      <% quotesArray.forEach(function(quoteId){ %>
+      <p><%= quoteId.quote %></p>
+      <footer><%= quoteId.author %></footer>
+      <% }); %>
     </blockquote>
   </li>
 </ul>
@@ -10,3 +12,4 @@
 <nav>
   <a href="/quotes/new">Add A New Quote</a>
 </nav>
+
