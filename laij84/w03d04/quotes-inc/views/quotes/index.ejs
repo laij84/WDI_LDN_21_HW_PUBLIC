@@ -2,7 +2,7 @@
   <li>
     <blockquote>
       <% quotesArray.forEach(function(quoteId){ %>
-      <p><%= quoteId.quote %></p>
+      <p><a href="quotes/<%=quoteId.id%>"><%= quoteId.quote %></a></p>
       <footer><%= quoteId.author %></footer>
       <% }); %>
     </blockquote>

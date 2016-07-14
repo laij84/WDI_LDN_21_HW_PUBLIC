@@ -45,41 +45,74 @@ var quotesArray = [
     quote: "In wine there is wisdom, in beer there is freedom, in water there is bacteria."
   }];
 
-router.get("/", function(req, res) {
- res.redirect("/quotes");
-});
+  router.get("/", function(req, res) {
+   res.redirect("/quotes");
+  });
 
-router.get("/quotes", function(req, res) {
- res.render("quotes/index", {quotesArray: quotesArray});
-});
+  router.get("/quotes", function(req, res) {
+   res.render("quotes/index", {quotesArray: quotesArray});
+  });
 
-router.get("/quotes", function(req, res) {
- var id = req.params.id;
- res.render("quotes/index",{quoteId: quotesArray[id] });
-});
+  router.get("/quotes", function(req, res) {
+   var id = req.params.id;
+   res.render("quotes/index",{quoteId: quotesArray[id] });
+  });
 
-router.get("/quotes/new", function(req, res) {
- res.render("quotes/new");
-});
+  router.get("/quotes/new", function(req, res) {
+   res.render("quotes/new");
+  });
 
-// EDIT
-router.get('/quotes/:id/edit', function(req, res) {
-  var id = req.params.id;
-  res.render("quotes/edit", { quoteId: quotesArray[id] });
-});
+//SHOW
+  router.get("/quotes/:id", function(req, res) {
+   var id = req.params.id;
+   res.render("quotes/show", {quoteId: quotesArray[id] });
+  });
 
-router.post("/quotes", function (req, res){
-  console.log(req.body);
+//EDIT
+  router.get('/quotes/:id/edit', function(req, res) {
+    var id = req.params.id;
+    res.render("quotes/edit", { quoteId: quotesArray[id] });
+  });
 
-  var quote = req.body.quote;
-  quote.id = quotesArray.length;
-  quotesArray.push(quote);
+//CREATE NEW QUOTE
+  router.post("/quotes", function (req, res){
+    console.log(req.body);
 
-  res.redirect("/quotes");
+    var quote = req.body.quote;
+    quote.id = quotesArray.length;
+    quotesArray.push(quote);
 
-})
+    res.redirect("/quotes");
+
+  });
+
+//UPDATE QUOTES
+  router.put("/quotes/:id", function(req, res) {
+    
+    var id = req.params.id;
+    var quote = req.body.quote;
+    quote.id = id;
+
+    quotesArray[id] = quote;
+
+    res.redirect("/quotes");
+  });
+
+//DELETE QUOTES
+  router.delete('/quotes/:id', function(req, res) {
+    var id = req.params.id;
+    quotesArray.splice(id , 1);
+
+    quotesArray = quotesArray.map(function(quote) {
+      if(quote.id>=id) quote.id--;
+        return quote;
+    });
+    res.redirect("/quotes");
+  });
+
+  module.exports = router;
 
 
-module.exports = router;
+
 
 

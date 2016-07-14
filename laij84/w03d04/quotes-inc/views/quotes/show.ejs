@@ -1,0 +1,21 @@
+<ul id="quotes">
+  <li>
+    <blockquote>
+      <p><%= quoteId.quote %></p>
+      <footer><%= quoteId.author %></footer>
+    </blockquote>
+  </li>
+</ul>
+
+<nav>
+  <a href="/quotes/<%= quoteId.id %>/edit">Edit this quote</a>
+</nav>
+
+
+
+  <form method="POST" action="/quotes/<%= quoteId.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+    <div class="form-group">
+    <input type="submit" value='Delete Quote' class="btn btn-default">
+    </div>
+  </form>
