@@ -62,6 +62,24 @@ router.get("/quotes/new", function(req, res) {
  res.render("quotes/new");
 });
 
+// EDIT
+router.get('/quotes/:id/edit', function(req, res) {
+  var id = req.params.id;
+  res.render("quotes/edit", { quoteId: quotesArray[id] });
+});
+
+router.post("/quotes", function (req, res){
+  console.log(req.body);
+
+  var quote = req.body.quote;
+  quote.id = quotesArray.length;
+  quotesArray.push(quote);
+
+  res.redirect("/quotes");
+
+})
+
+
 module.exports = router;
 
 
