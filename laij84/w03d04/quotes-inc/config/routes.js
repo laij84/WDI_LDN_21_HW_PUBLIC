@@ -43,28 +43,25 @@ var quotesArray = [
     id:7,
     author: "Benjamin Franklin", 
     quote: "In wine there is wisdom, in beer there is freedom, in water there is bacteria."
-  }
-];
+  }];
 
 router.get("/", function(req, res) {
-  res.redirect("/quotes");
+ res.redirect("/quotes");
 });
 
-// Same as Index Page?
 router.get("/quotes", function(req, res) {
-  res.render("quotes/index", {quotesArray: quotesArray});
+ res.render("quotes/index", {quotesArray: quotesArray});
 });
 
-router.get("/quotes/:id", function(req, res) {
-  var id = req.params.id;
-  res.render("quotes/index", { quoteId: quotesArray[id] });
+router.get("/quotes", function(req, res) {
+ var id = req.params.id;
+ res.render("quotes/index",{quoteId: quotesArray[id] });
 });
 
 router.get("/quotes/new", function(req, res) {
-  res.render("quotes/new");
+ res.render("quotes/new");
 });
 
 module.exports = router;
-
 
 
