@@ -1,8 +1,5 @@
 <h1>Index</h1>
 
-<% homeworkArray.forEach(function(homeworkObject){ %>
+<% include ./partials/card %>
 
-<p><%= homeworkObject.caption %></p>
-<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.caption %>">
-
-<% }); %>
+<a href="/home/new">Add A New Image</a>

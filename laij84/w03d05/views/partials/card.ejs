@@ -1,0 +1,10 @@
+
+<% homeworkArray.forEach(function(homeworkObject){ %>
+
+<h1>Card</h1>
+
+<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.caption %>">
+<p><%= homeworkObject.caption %></p>
+
+<button><a href="/home/<%= homeworkObject.id %>/edit">Edit</a></button>
+<% }); %>
