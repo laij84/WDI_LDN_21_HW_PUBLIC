@@ -1,1 +1,14 @@
 <h1>Edit</h1>
+
+<form method="POST" action="/home/<%= homeworkObject.id %>">
+
+  <input type="hidden" name="_method" value="PUT">
+
+  <label for="book_title">image</label>
+  <input type="text" name="homework[image]" value="<%= homeworkObject.image %>">
+
+  <label for="book_author">caption</label>
+  <input type="text" name="homework[caption]" value="<%= homeworkObject.caption %>">
+
+  <button>Update</button>
+</form>
