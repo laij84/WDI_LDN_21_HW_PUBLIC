@@ -1,12 +1,17 @@
 var homeworkArray = [
   { id: 0,
-    image: "hello",
-    caption: "Test caption"
+    image: "http://i.imgur.com/kFJ9H7u.jpg",
+    caption: "hello"
   },
-  { id: 0,
-    image: "Cats",
-    caption: "Hi how are you"
+  { id: 1,
+    image: "http://i.imgur.com/DDCK3Zf.jpg",
+    caption: "Meow Meow"
+  },
+  { id: 2,
+    image: "http://i.imgur.com/OqLz8Bv.jpg",
+    caption: "Dogs"
   }
+
 ];
 
 module.exports = homeworkArray;

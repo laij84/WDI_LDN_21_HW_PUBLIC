@@ -2,6 +2,7 @@
 
 <% homeworkArray.forEach(function(homeworkObject){ %>
 
-<p><%= homeworkObject.caption %></a></p>
+<p><%= homeworkObject.caption %></p>
+<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.caption %>">
 
 <% }); %>
