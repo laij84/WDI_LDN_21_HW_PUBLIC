@@ -1,6 +1,6 @@
-<h1>New</h1>
+<h1>Post New Image</h1>
 
-<form method="POST" action="/home">
+<!-- <form method="POST" action="/home">
   <label for="homeworkObject_image">Image URL</label>
   <input type="text" name="homework[image]">
 
@@ -8,4 +8,26 @@
   <input type="text" name="homework[caption]">
 
   <button>Create</button>
+</form> -->
+
+
+<div class="container">
+<form method="POST" action="/home">
+  <div class="form-group">
+    <label for="homework_title">Title</label>
+    <input type="text" name="homework[title]" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="homework_caption">Caption</label>
+    <input type="text" name="homework[caption]" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="homework_caption">Image URL</label>
+    <input type="text" name="homework[image]" class="form-control">
+  </div>
+
+  <button type="submit" class="btn btn-default">Post Image</button>
 </form>
+</div>

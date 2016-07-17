@@ -1,16 +1,29 @@
+#siteTitle {
+  font-size: 5em;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+}
+
 img {
 width: 250px !important;
 height: 250px !important;
 background-position:center !important;
 }
 
-/*.card {
-  border: 1px solid black;
-  width: 320px;
-  height: 280px;
-  background-color: red;
-}*/
+#footer-padding {
+  margin-bottom: 50px !important;
+}
 
-/*body {
-  background: lightblue;
-}*/
+@media screen and (max-width: 640px) {
+  
+  #siteTitle {
+    font-size: 3em;
+  }
+
+  h1 
+     {
+        text-align: center;
+    }
+}

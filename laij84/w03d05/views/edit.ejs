@@ -1,16 +1,27 @@
-<h1>Edit</h1>
+<h1>Edit Post</h1>
 
-<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.caption %>">
+<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.title %>">
+<br>
+<br>
 
+<div class="container">
 <form method="POST" action="/home/<%= homeworkObject.id %>">
+<input type="hidden" name="_method" value="PUT">
+  <div class="form-group">
+    <label for="homework_title">Title</label>
+    <input type="text" name="homework[title]" class="form-control" value="<%= homeworkObject.title %>">
+  </div>
 
-  <input type="hidden" name="_method" value="PUT">
+  <div class="form-group">
+    <label for="homework_caption">Caption</label>
+    <input type="text" name="homework[caption]" class="form-control" value="<%= homeworkObject.caption %>">
+  </div>
 
-  <label for="homework_image">image</label>
-  <input type="text" name="homework[image]" value="<%= homeworkObject.image %>">
+  <div class="form-group">
+    <label for="homework_caption">Image URL</label>
+    <input type="text" name="homework[image]" class="form-control" value="<%= homeworkObject.image %>">
+  </div>
 
-  <label for="homework_caption">caption</label>
-  <input type="text" name="homework[caption]" value="<%= homeworkObject.caption %>">
-
-  <button>Update</button>
+  <button type="submit" class="btn btn-default">Update Post</button>
 </form>
+</div>

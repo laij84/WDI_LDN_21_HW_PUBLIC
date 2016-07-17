@@ -3,13 +3,13 @@
 <div class="row">
 <% homeworkArray.forEach(function(homeworkObject){ %>
 
-<div class="col-md-4">
+<div class="col-sm-6 col-md-4">
   <div class="thumbnail">
     <img src="<%= homeworkObject.image %>" alt="<%= homeworkObject.title %>">
     <div class="caption">
       <h3><%= homeworkObject.title %></h3>
       <p><%= homeworkObject.caption %></p>
-      <p><a href="/home/<%= homeworkObject.id %>/edit" class="btn btn-primary" role="button">Edit</a> <a href="/home/<%= homeworkObject.id %>/edit" class="btn btn-default" role="button">Show</a></p>
+      <p><a href="/home/<%= homeworkObject.id %>/edit" class="btn btn-primary" role="button">Edit</a> <a href="/home/<%= homeworkObject.id %>" class="btn btn-default" role="button">Show</a></p>
     </div>
   </div>
 </div>

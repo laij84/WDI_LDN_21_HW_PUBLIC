@@ -15,6 +15,9 @@ router.route("/home")
 //New
   router.get("/home/new", homeworkController.new );
 
+//About
+  router.get("/home/about", homeworkController.about );
+
 //SHOW
 router.route("/home/:id")
   .get(homeworkController.show)
@@ -25,3 +28,4 @@ router.route("/home/:id")
 router.get('/home/:id/edit', homeworkController.edit);
 
 module.exports = router;
+

@@ -1,10 +1,17 @@
-<h1>Show</h1>
+<h1><%= homeworkObject.title %></h1>
 
-  <img src="<%= homeworkObject.image %>" alt="<%= homeworkObject.caption %>">
-      
-  <a href="/home/<%= homeworkObject.id %>/edit">Edit</a>
+<img src="<%= homeworkObject.image %>" alt="<%= homeworkObject.title %>"> 
+<br>
+<br>
+<p><%= homeworkObject.caption %></p>
+<br>
+  <button class="btn btn-default">
+    <a href="/home/<%= homeworkObject.id %>/edit">Edit Post</a>
+  </button> 
+<br>
+<br>
+  <form method="POST" action="/home/<%= homeworkObject.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <button class="btn btn-default">Delete Post</button>
+  </form>
 
- <form method="POST" action="/home/<%= homeworkObject.id %>">
-   <input type="hidden" name="_method" value="DELETE">
-   <button>DELETE</button>
- </form>

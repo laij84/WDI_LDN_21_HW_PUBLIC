@@ -5,6 +5,12 @@ function homeworkIndex(req, res) {
    res.render("index", {homeworkArray: homeworkArray});
   }
 
+
+  //about
+  function homeworkAbout(req, res) {
+     res.render("about");
+    }
+
 //new
   function homeworkNew(req, res) {
     res.render("new");
@@ -66,5 +72,6 @@ module.exports = {
   show: homeworkShow,
   edit: homeworkEdit,
   update: homeworkUpdate,
-  delete: homeworkDelete
+  delete: homeworkDelete,
+  about: homeworkAbout  
 };
