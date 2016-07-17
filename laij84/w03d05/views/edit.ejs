@@ -1,5 +1,7 @@
 <h1>Edit</h1>
 
+<img src="<%= homeworkObject.image %>" alt= "<%= homeworkObject.caption %>">
+
 <form method="POST" action="/home/<%= homeworkObject.id %>">
 
   <input type="hidden" name="_method" value="PUT">

@@ -1,1 +1,13 @@
 <h1>Show</h1>
+
+  <img src="<%= homeworkObject.image %>" alt="<%= homeworkObject.caption %>">
+      
+  <a href="/home/<%= homeworkObject.id %>/edit">Edit this quote</a>
+
+
+
+
+ <form method="POST" action="/home/<%= homeworkObject.id %>">
+   <input type="hidden" name="_method" value="DELETE">
+   <button>DELETE</button>
+ </form>
