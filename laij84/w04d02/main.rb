@@ -8,7 +8,8 @@ deck = cards.product(suits).shuffle
 player_array = deck.pop(2)
 dealer_array = deck.pop(2)
 
-puts "Player's hand contains #{player_array}"
+puts "The player's hand contains #{player_array}"
+puts "The dealer's hand contains #{dealer_array}"
 
 def calculate_player_hand (player_array, player_score) 
   @player_score = 0
@@ -25,7 +26,6 @@ def calculate_player_hand (player_array, player_score)
     @player_score += elem[0] 
     end
   end
-  # puts "the player's score is #{@player_score}"
 end
 
 def calculate_dealer_hand (dealer_array, dealer_score) 
@@ -43,7 +43,6 @@ def calculate_dealer_hand (dealer_array, dealer_score)
     @dealer_score += elem[0] 
     end
   end
-  # puts "the dealer's score is #{@dealer_score}"
 end
 
 def hit_stick(player_array, player_score, deck, dealer_array, dealer_score)
