@@ -1,0 +1,16 @@
+body {
+  background-color: pink;
+}
+
+.thumbnail img {
+  border-radius: 100%;
+}
+
+.caption h3 {
+  text-align: center;
+}
+
+.carousel-inner img {
+  width: 100%;
+  max-height: 315px;
+}

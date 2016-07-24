@@ -1,0 +1,79 @@
+<!-- <h1>Breakfast Recipes</h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.category == "Breakfast" %>
+  <li><a href="/recipes/<%= recipe.id %>"><%= recipe.title%></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h1>Lunch Recipes</h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.category == "Lunch" %>
+  <li><a href="/recipes/<%= recipe.id %>"><%= recipe.title%></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h1>Dinner Recipes</h1>
+<ul>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.category == "Dinner" %>
+  <li><a href="/recipes/<%= recipe.id %>"><%= recipe.title%></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h1>All Recipes</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+  <li><a href="/recipes/<%= recipe.id %>"><%= recipe.title%></a></li>
+  <% end %>
+</ul> -->
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="/recipes/breakfast">
+        <img src="/images/breakfastbanner.jpg" alt="Breakfast Recipes">
+      </a>
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <a href="/recipes/lunch">
+        <img src="/images/lunchbanner.jpg" alt="Lunch Recipes">
+      </a>
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+    <div class="item">
+      <a href="/recipes/dinner">
+        <img src="/images/dinnerbanner.jpg" alt="Dinner Recipes">
+      </a>
+      <div class="carousel-caption">
+        <h3>Caption Text</h3>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->

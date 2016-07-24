@@ -1,0 +1,29 @@
+<h1>New</h1>
+
+<form action="/recipes" method="POST">
+
+    <label for="recipe_title">Title</label>
+    <input type="text" name="recipe[title]" id="recipe_title">
+
+    <label for="recipe_author">Author</label>
+    <input type="text" name="recipe[author]" id="recipe_author">
+
+    <label for="recipe_image">Image URL</label>
+    <input type="text" name="recipe[image]" id="recipe_image">
+
+    <label for="recipe_category">Category</label>
+    <select name="recipe[category]" id="recipe_category">
+    <% @categories.each do |category| %>
+    <option><%= category %></option>
+    <% end %>
+    </select>
+
+    <label for="recipe_description">Description</label>
+    <input type="text" name="recipe[description]" id="recipe_description">
+
+    <label for="recipe_url">URL</label>
+    <input type="text" name="recipe[recipe_url]" id="recipe_url">
+
+    <button>Add Recipe</button>
+
+</form>

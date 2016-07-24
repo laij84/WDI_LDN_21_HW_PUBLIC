@@ -1,0 +1,31 @@
+<h1>Edit</h1>
+
+<form action="/recipes/<%= @recipe.id %>" method="POST">
+
+<input type="hidden" name="_method" value="PUT">
+
+    <label for="recipe_title">Title</label>
+    <input type="text" name="recipe[title]" id="recipe_title" value="<%= @recipe.title %>">
+
+    <label for="recipe_author">Author</label>
+    <input type="text" name="recipe[author]" id="recipe_author" value="<%= @recipe.author %>">
+
+    <label for="recipe_image">Image URL</label>
+    <input type="text" name="recipe[image]" id="recipe_image" value="<%= @recipe.image %>">
+
+    <label for="recipe_category">Category</label>
+    <select name="recipe[category]" id="recipe_category">
+    <% @categories.each do |category| %>
+    <option <% if @recipe.category == category%> selected <% end %>><%= category %></option>
+    <% end %>
+    </select>
+
+    <label for="recipe_description">Description</label>
+    <input type="text" name="recipe[description]" id="recipe_description" value="<%= @recipe.description %>">
+
+    <label for="recipe_url">URL</label>
+    <input type="text" name="recipe[recipe_url]" id="recipe_url" value="<%= @recipe.recipe_url %>">
+
+    <button>Edit Recipe</button>
+
+</form>
