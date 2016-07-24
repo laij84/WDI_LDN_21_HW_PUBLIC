@@ -51,7 +51,7 @@
   <% @recipes.shuffle.take(6).each do |recipe| %>
     <div class="col-sm-6 col-md-4">
     <h4><%= recipe.title%></h4>
-      <a href="#" class="thumbnail">
+      <a href="/recipes/<%= recipe.id %>" class="thumbnail">
         <img src="<%= recipe.image%>" alt="<%= recipe.title%>">
       </a>
     </div>
