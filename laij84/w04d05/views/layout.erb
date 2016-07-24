@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 
 <!-- jquery -->
 <script   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
@@ -22,18 +22,30 @@
 <!-- own stylesheet -->
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
-  <title>Recipes</title>
+  <title>Three Meals a Day</title>
 </head>
 <body>
   <div class="container">
-  <h1>Food Website</h1>
-    <ul class="nav nav-tabs">
+  <h1 id="siteName">Three Meals a Day</h1>
+    <ul class="nav nav-tabs nav-justified">
       <li role="presentation" class="active"><a href="/recipes">Home</a></li>
-      <li role="presentation"><a href="/recipes/breakfast">Breakfast Recipes</a></li>
-      <li role="presentation"><a href="/recipes/lunch">Lunch Recipes</a></li>
-      <li role="presentation"><a href="/recipes/dinner">Dinner Recipes</a></li>
+      <li role="presentation"><a href="/recipes/breakfast">Breakfast</a></li>
+      <li role="presentation"><a href="/recipes/lunch">Lunch</a></li>
+      <li role="presentation"><a href="/recipes/dinner">Dinner</a></li>
+      <li role="presentation"><a href="/recipes/new">Post Recipe</a></li>
+      <li role="presentation"><a href="/recipes/about">About</a></li>
     </ul>
+
     <%= yield %>
-  <div class="container">
+    
+    <div class="footerPadding"></div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <p class="navbar-text pull-left">© 2016 - Jason Lai</p>
+        </div>
+    </div>
+  
+  </div>
+  <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

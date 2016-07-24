@@ -1,7 +1,11 @@
-<h1>Show</h1>
-
-<h2><%= @recipe.title %></h2>
-<small><%= @recipe.author %></small>
-
-<img src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
-<h3><%= @recipe.description %></h3>
+<h1><%= @recipe.title %></h1>
+<h4>by <%= @recipe.author %></h4>
+<div class="showImg thumbnail">
+  <img src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
+</div>
+<p><%= @recipe.description %></p>
+    <p>   
+      <a href="<%= @recipe.recipe_url %>" class="btn btn-primary" role="button">Get this recipe</a> 
+      <a href="<%= @recipe.recipe_url %>" class="btn btn-default" role="button">Edit post</a>
+    </p>
+&nbsp;

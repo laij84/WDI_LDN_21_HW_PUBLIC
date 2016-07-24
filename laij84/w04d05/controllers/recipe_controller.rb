@@ -29,6 +29,12 @@ get '/recipes/dinner' do
   erb :"recipes/dinner" 
 end
 
+#About
+get '/recipes/about' do
+  @recipes = Recipe.all
+  erb :"recipes/about" 
+end
+
 # Create
 post '/recipes' do
   recipe = params[:recipe]
@@ -57,7 +63,7 @@ end
 
 #update
 put '/recipes/:id' do
-  book = Recipe.update_by_id(params[:id], params[:recipe])
+  recipe = Recipe.update_by_id(params[:id], params[:recipe])
   @categories = categories
   redirect "/recipes/#{recipe.id}"
 end

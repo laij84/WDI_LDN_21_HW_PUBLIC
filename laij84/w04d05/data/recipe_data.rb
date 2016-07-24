@@ -28,6 +28,28 @@ Recipe.new( "Easy french toast",
              sugar and serve with toffee sauce and vanilla ice cream.", 
             "http://allrecipes.co.uk/recipe/6025/easy-french-toast.aspx?o_is=Hub_TopRecipe_4")
 
+
+Recipe.new( "Pesto scrambled eggs", 
+            "Sophia Wade", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/8b405450-b269-4c17-a06b-3b7efbba503e.jpg", 
+            "Breakfast", 
+            "Looking for new breakfast or brunch ideas? Try this cheesy scrambled egg with a little pesto stirred in. I like it on granary toast.", 
+            "http://allrecipes.co.uk/recipe/2206/pesto-scrambled-eggs.aspx?o_is=Hub_TopRecipe_5")
+
+Recipe.new( "Clone of a cinnabon", 
+            "Marsha Fernandez", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/20156.jpg", 
+            "Breakfast", 
+            "The dough for these cinnamon buns is made in a bread machine before it is shaped into buns and baked in the oven. If you don't have a bread machine, follow the notes at the bottom of this recipe.", 
+            "http://allrecipes.co.uk/recipe/4727/clone-of-a-cinnabon.aspx?o_is=Hub_TopRecipe_2")
+
+Recipe.new( "Apple muffins", 
+            "Lynn740", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/2de461ed-3043-48a7-8ee6-f54ed235aac3.jpg", 
+            "Breakfast", 
+            "This is a basic fruit muffin recipe. I use chopped apples, but any type of fruit may be added to make a quick and easy batch of fruit muffins.", 
+            "http://allrecipes.co.uk/recipe/744/apple-muffins.aspx?o_is=LV")
+
 #Lunch Recipes
 
 Recipe.new( "Falafel pittas", 
@@ -55,9 +77,29 @@ Recipe.new( "Halloumi & mushroom kebabs",
              inspiration for that BBQ menu, try this fuss-free recipe for Halloumi and mushroom kebabs.", 
             "http://allrecipes.co.uk/recipe/24464/halloumi-and-mushroom-kebabs.aspx?o_is=SR")
 
+Recipe.new( "Hannah's cous cous salad", 
+            "Vickie1", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/146bd856-17b0-45fd-b412-08868823d972.jpg", 
+            "Lunch", 
+            "This simple salad is a favourite of my daughters & whenever made will simply disappear from the fridge before I get to serve it! Quick & easy to prepare & useful to use up odds and ends of salad ingredients.", 
+            "http://allrecipes.co.uk/recipe/5912/hannah-s-cous-cous-salad.aspx?o_is=Hub_TopRecipe_5")
+
+Recipe.new( "BLT pasta salad", 
+            "Kristen", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/2ee08862-87a9-4315-93e0-c718fd79cdf3.jpg", 
+            "Lunch", 
+            "This is an economical pasta salad that's great for picnics or barbecues.", 
+            "http://allrecipes.co.uk/recipe/7320/blt-pasta-salad.aspx?o_is=LV")
+
+Recipe.new( "Cumin-spiced lamb burgers", 
+            "Alan Hollister", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/a8adc7b9-ae4d-4290-976e-179aa9292020.jpg", 
+            "Lunch", 
+            "This recipe blends the flavours of cumin and lamb into one delicious burger. They are really tasty and super-easy to make. You can also cook these burgers on the barbecue, when the sun is finally out.", 
+            "http://allrecipes.co.uk/recipe/9509/cumin-spiced-lamb-burgers.aspx?o_is=LV")
 
 #Dinner Recipes
-Recipe.new( "Japanese beef soba noodles", 
+Recipe.new( "Beef soba noodles", 
             "Norma MacMillan", 
             "http://ukcdn.ar-cdn.com/recipes/originalxl/f5a94a3d-e203-40ca-8868-8e46682e7048.jpg", 
             "Dinner", 
@@ -82,6 +124,28 @@ Recipe.new( "Thai green chicken curry",
             "Kang khiew wan gai is a Thai green curry made with sliced chicken thighs and small green
              aubergines.", 
             "http://allrecipes.co.uk/recipe/31996/kang-khiew-wan-gai--thai-green-chicken-curry-.aspx?o_is=Hub_TopRecipe_1")
+
+Recipe.new( "Chicken jalfrezi",
+            "Alia Tasleem", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/b8efa3bc-d7ed-4402-a367-24e72dc54dd5.jpg", 
+            "Dinner", 
+            "This is a Pakistani recipe for a spicy curry. My mum made this dish, and I like it very much. You must try it. This dish is best served with basmati rice, chapattis or naan bread.", 
+            "http://allrecipes.co.uk/recipes/main-recipes.aspx?page=2")
+
+Recipe.new( "Briam",
+            "Diana", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/a4df902b-cd50-43da-a6bd-2a99350eaddc.jpg", 
+            "Dinner", 
+            "Briam embodies how Greek cuisine takes a few of the simplest of ingredients and turns them into something utterly delicious with little effort. This is a traditional dish served as a main course, and with olive oil as the only source of fat it is a quintessential example of the 'Mediterranean diet'. If preferred, serve with a hearty chunk of feta on the side.", 
+            "http://allrecipes.co.uk/recipe/12157/briam--greek-potato-and-courgette-bake-.aspx?o_is=LV")
+
+Recipe.new( "Shearer's hot pot",
+            "Kattjovi", 
+            "http://ukcdn.ar-cdn.com/recipes/originalxl/d336a0cf-e149-4bc6-a75b-0704181571d2.jpg", 
+            "Dinner", 
+            "This is a very filling Australian outback recipe that is often made for the shearers, but it's great for a cosy winter meal.", 
+            "http://allrecipes.co.uk/recipe/5881/shearer-s-mince-and-potato-hot-pot.aspx?o_is=LV")
+
 
 
 
