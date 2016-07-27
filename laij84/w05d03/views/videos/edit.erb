@@ -1,1 +1,32 @@
-<h1>Edit</h1>
+<h1>Edit <%= @video.title %></h1>
+
+<form action="/videos/<%= @video.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  
+  <div class="form-group">
+    <input class="form-control" name="video[title]" placeholder="Title" value="<%= @video.title%>">
+  </div>
+
+  <div class="form-group">
+    <input class="form-control" name="video[genre]" placeholder="Genre" value="<%= @video.genre%>">
+  </div>
+
+  <div class="input-group form-group">
+    <div class="input-group-addon">http://www.youtube.com/watch?v=</div>
+      <input class="form-control" name="video[url]" placeholder="http://www.youtube.com/watch?v=" value="<%= @video.url%>">
+  </div>
+  
+  <div class="form-group">
+    <textarea class="form-control" name="video[description]" placeholder="Description"><%= @video.description%></textarea>
+  </div>
+
+  <button class="btn btn-primary">Save</button>
+
+</form>
+<br>
+<form action="/videos/<%= @video.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <button class="btn btn-default">Delete</button>
+</form>
+
+

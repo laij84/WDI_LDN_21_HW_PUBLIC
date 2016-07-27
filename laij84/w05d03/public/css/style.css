@@ -1,3 +1,30 @@
+h1, h2, h3, p {
+  color: white;
+  text-shadow: 2px 2px #323232;
+}
+
+.thumbnail {
+  background: rgba(25,25,25, 0.7);
+  border: none;
+}
+
 .iframe-container {
   text-align:center;
+}
+
+body {
+  background: url(http://www.myfreetextures.com/wp-content/uploads/2014/11/blue-abstract-background-image.jpg);
+  background-size:cover;
+}
+
+.form-control {
+  background: rgba(25,25,25, 0.7);
+  color: white;
+  border: none;
+}
+
+.input-group-addon {
+  background:black;
+  color: white;
+  border: none;
 }
