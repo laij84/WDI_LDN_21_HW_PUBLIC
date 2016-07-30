@@ -2,6 +2,7 @@
 
 #INDEX
 get '/posts' do
+  flash[:success] = "TEST FLASH"
   erb :"posts/index"
 end
 
