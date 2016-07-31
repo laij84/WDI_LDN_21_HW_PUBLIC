@@ -1,0 +1,17 @@
+<h2>Index</h2>
+
+<div class="row">
+  <% @stations.each do |station| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h2>
+            <a href="/stations/<%= station.id %>">
+              <%= station.name %>  
+            </a>
+          </h2> 
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div >

@@ -11,6 +11,7 @@ end
 #NEW
 get '/posts/new' do
   authorize!
+  @lines = Line.all
   @stations = Station.all
   @user_id = session[:user_id]
   erb :"posts/new"

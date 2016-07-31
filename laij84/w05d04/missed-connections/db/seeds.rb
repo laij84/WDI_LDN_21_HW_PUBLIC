@@ -40,63 +40,217 @@ post3 = Post.create(
   user_id: 1)
 
 #Central Line Stations
-station1 = Station.create(name: "West Ruislip")
-station2 = Station.create(name: "Ruislip Gardens")
-station3 = Station.create(name: "South Ruislip")
-station4 = Station.create(name: "Northolt")
-station5 = Station.create(name: "Greenford")
-station6 = Station.create(name: "Perivale")
-station7 = Station.create(name: "Hanger Lane")
-station8 = Station.create(name: "Ealing Broadway")
-station9 = Station.create(name: "West Acton")
-station10 = Station.create(name: "North Acton")
-station11 = Station.create(name: "East Acton")
-station12 = Station.create(name: "White City")
-station13 = Station.create(name: "Shepherd's Bush")
-station14 = Station.create(name: "Holland Park")
-station15 = Station.create(name: "Notting Hill Gate")
-station16 = Station.create(name: "Queensway")
-station17 = Station.create(name: "Lancaster Gate")
-station18 = Station.create(name: "Marble Arch")
-station19 = Station.create(name: "Bond Street")
-station20 = Station.create(name: "Oxford Circus")
-station21 = Station.create(name: "Tottenham Court Road")
-station22 = Station.create(name: "Holborn")
-station23 = Station.create(name: "Chancery Lane")
-station24 = Station.create(name: "St. Paul's")
-station25 = Station.create(name: "Bank")
-station26 = Station.create(name: "Liverpool Street")
-station27 = Station.create(name: "Bethnal Green")
-station28 = Station.create(name: "Mile End")
-station29 = Station.create(name: "Stratford")
-station30 = Station.create(name: "Leyton")
-station31 = Station.create(name: "Leytonstone")
-station32 = Station.create(name: "Wanstead")
-station33 = Station.create(name: "Redbridge")
-station34 = Station.create(name: "Gants Hill")
-station35 = Station.create(name: "Newbury Park")
-station36 = Station.create(name: "Barkingside")
-station37 = Station.create(name: "Fairlop")
-station38 = Station.create(name: "Hainault")
-station39 = Station.create(name: "Grange Hill")
-station40 = Station.create(name: "Chigwell")
-station41 = Station.create(name: "Roding Valley")
-station42 = Station.create(name: "Snaresbrook")
-station43 = Station.create(name: "South Woodford")
-station44 = Station.create(name: "Woodford")
-station45 = Station.create(name: "Buckhurst Hill")
-station46 = Station.create(name: "Loughton")
-station47 = Station.create(name: "Debden")
-station48 = Station.create(name: "Theydon Bois")
-station49 = Station.create(name: "Epping")
+west_ruislip = Station.create(name: "West Ruislip")
+ruislip_gardens = Station.create(name: "Ruislip Gardens")
+south_ruislip = Station.create(name: "South Ruislip")
+northolt = Station.create(name: "Northolt")
+greenford = Station.create(name: "Greenford")
+perivale = Station.create(name: "Perivale")
+hanger_lane = Station.create(name: "Hanger Lane")
+ealing_broadway = Station.create(name: "Ealing Broadway")
+west_acton = Station.create(name: "West Acton")
+north_acton = Station.create(name: "North Acton")
+east_acton = Station.create(name: "East Acton")
+white_city = Station.create(name: "White City")
+shepherds_bush = Station.create(name: "Shepherd's Bush")
+holland_park = Station.create(name: "Holland Park")
+notting_hill_gate = Station.create(name: "Notting Hill Gate")
+queensway = Station.create(name: "Queensway")
+lancaster_gate = Station.create(name: "Lancaster Gate")
+marble_arch = Station.create(name: "Marble Arch")
+bond_street = Station.create(name: "Bond Street")
+oxford_circus = Station.create(name: "Oxford Circus")
+tottenham_court_road = Station.create(name: "Tottenham Court Road")
+holborn = Station.create(name: "Holborn")
+chancery_lane = Station.create(name: "Chancery Lane")
+st_pauls = Station.create(name: "St. Paul's")
+bank = Station.create(name: "Bank")
+liverpool_street = Station.create(name: "Liverpool Street")
+bethnal_green = Station.create(name: "Bethnal Green")
+mile_end = Station.create(name: "Mile End")
+stratford = Station.create(name: "Stratford")
+leyton = Station.create(name: "Leyton")
+leytonstone = Station.create(name: "Leytonstone")
+wanstead = Station.create(name: "Wanstead")
+redbridge = Station.create(name: "Redbridge")
+gants_hill = Station.create(name: "Gants Hill")
+newbury_park = Station.create(name: "Newbury Park")
+barkingside = Station.create(name: "Barkingside")
+fairlop = Station.create(name: "Fairlop")
+hainault = Station.create(name: "Hainault")
+grange_hill = Station.create(name: "Grange Hill")
+chigwell = Station.create(name: "Chigwell")
+roding_valley = Station.create(name: "Roding Valley")
+snaresbrook = Station.create(name: "Snaresbrook")
+south_woodford = Station.create(name: "South Woodford")
+woodford = Station.create(name: "Woodford")
+buckhurst_hill = Station.create(name: "Buckhurst Hill")
+loughton = Station.create(name: "Loughton")
+debden = Station.create(name: "Debden")
+theydon_bois = Station.create(name: "Theydon Bois")
+epping = Station.create(name: "Epping")
 
-post1.stations = [station1]
-post2.stations = [station3]
-post3.stations = [station2, station5]
+#Northern Line Stations
+#Bank and Tottenham Court Road is part of northern and central line. Removed from below to prevent duplication
+high_barnet = Station.create(name: "High Barnet")
+totteridge_whetstone = Station.create(name: "Totteridge & Whetstone")
+woodside_park = Station.create(name: "Woodside Park")
+west_finchley = Station.create(name: "West Finchley")
+mill_hill_east = Station.create(name: "Mill Hill East")
+finchley_central = Station.create(name: "Finchley Central")
+east_finchley = Station.create(name: "East Finchley")
+highgate = Station.create(name: "Highgate")
+archway = Station.create(name: "Archway")
+tufnell_park = Station.create(name: "Tufnell Park")
+kentish_town = Station.create(name: "Kentish Town")
+edgware = Station.create(name: "Edgware")
+burnt_oak = Station.create(name: "Burnt Oak")
+colindale = Station.create(name: "Colindale")
+hendon_central = Station.create(name: "Hendon Central")
+brent_cross = Station.create(name: "Brent Cross")
+golders_green = Station.create(name: "Golders Green")
+hampstead = Station.create(name: "Hampstead")
+belsize_park = Station.create(name: "Belsize Park")
+chalk_farm = Station.create(name: "Chalk Farm")
+camden_town = Station.create(name: "Camden Town")
+mornington_crescent = Station.create(name: "Mornington Crescent")
+euston = Station.create(name: "Euston")
+warren_street = Station.create(name: "Warren Street")
+goodge_street = Station.create(name: "Goodge Street")
+leicester_square = Station.create(name: "Leicester Square")
+charing_cross = Station.create(name: "Charing Cross")
+embankment = Station.create(name: "Embankment")
+waterloo = Station.create(name: "Waterloo")
+kings_cross_st_pancras = Station.create(name: "King's Cross St. Pancras")
+angel = Station.create(name: "Angel")
+old_street = Station.create(name: "Old Street")
+moorgate = Station.create(name: "Moorgate")
+london_bridge = Station.create(name: "London Bridge")
+borough = Station.create(name: "Borough")
+elephant_castle = Station.create(name: "Elephant & Castle")
+kennington = Station.create(name: "Kennington")
+oval = Station.create(name: "Oval")
+stockwell = Station.create(name: "Stockwell")
+clapham_north = Station.create(name: "Clapham North")
+clapham_common = Station.create(name: "Clapham Common")
+clapham_south = Station.create(name: "Clapham South")
+balham = Station.create(name: "Balham")
+tooting_bec = Station.create(name: "Tooting Bec")
+tooting_broadway = Station.create(name: "Tooting Broadway")
+colliers_wood = Station.create(name: "Colliers Wood")
+south_wimbledon = Station.create(name: "South Wimbledon")
+morden = Station.create(name: "Morden")
 
-line1 = Line.create(name: "Central Line")
+post1.stations = [bank]
+post2.stations = [holborn]
+post3.stations = [oxford_circus, liverpool_street]
 
-line1.stations = [station1,station2,station3,station4,station5,station6,station7,station8,station9,station10,station11,station12,station13,station14,station15,station16,station17,station18,station19,station20,station21,station22,station23,station24,station25,station26,station27,station28,station29,station30,station31,station32,station33,station34,station35,station36,station37,station38,station39,station40,station41,station42,station43,station44,station45,station46,station47,station48,station49]
+central_line = Line.create(name: "Central Line")
+northern_line = Line.create(name: "Northern Line")
+
+central_line.stations = [
+  west_ruislip,
+  ruislip_gardens,
+  south_ruislip,
+  northolt,
+  greenford,
+  perivale,
+  hanger_lane,
+  ealing_broadway,
+  west_acton,
+  north_acton,
+  east_acton,
+  white_city,
+  shepherds_bush,
+  holland_park,
+  notting_hill_gate,
+  queensway,
+  lancaster_gate,
+  marble_arch,
+  bond_street,
+  oxford_circus,
+  tottenham_court_road,
+  holborn,
+  chancery_lane,
+  st_pauls,
+  bank,
+  liverpool_street,
+  bethnal_green,
+  mile_end,
+  stratford,
+  leyton,
+  leytonstone,
+  wanstead,
+  redbridge,
+  gants_hill,
+  newbury_park,
+  barkingside,
+  fairlop,
+  hainault,
+  grange_hill,
+  chigwell,
+  roding_valley,
+  snaresbrook,
+  south_woodford,
+  woodford,
+  buckhurst_hill,
+  loughton,
+  debden,
+  theydon_bois,
+  epping
+]
+northern_line.stations = [
+  high_barnet,
+  totteridge_whetstone,
+  woodside_park,
+  west_finchley,
+  mill_hill_east,
+  finchley_central,
+  east_finchley,
+  highgate,
+  archway,
+  tufnell_park,
+  kentish_town,
+  edgware,
+  burnt_oak,
+  colindale,
+  hendon_central,
+  brent_cross,
+  golders_green,
+  hampstead,
+  belsize_park,
+  chalk_farm,
+  camden_town,
+  mornington_crescent,
+  euston,
+  warren_street,
+  goodge_street,
+  tottenham_court_road,
+  leicester_square,
+  charing_cross,
+  embankment,
+  waterloo,
+  kings_cross_st_pancras,
+  angel,
+  old_street,
+  moorgate,
+  bank,
+  london_bridge,
+  borough,
+  elephant_castle,
+  kennington,
+  oval,
+  stockwell,
+  clapham_north,
+  clapham_common,
+  clapham_south,
+  balham,
+  tooting_bec,
+  tooting_broadway,
+  colliers_wood,
+  south_wimbledon,
+  morden
+]
 
 
 

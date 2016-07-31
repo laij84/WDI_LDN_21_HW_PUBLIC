@@ -1,0 +1,21 @@
+<h2>New Station</h2>
+
+<form action="/stations" method="POST">
+  
+  <div class="form-group">
+    <input name="station[name]" placeholder="Name" class="form-control">
+  </div>
+
+
+    <% @lines.each do |line| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="station[line_ids][]" value="<%= line.id %>">
+          <%= line.name %> 
+        </label>
+      </div>
+    <% end %>
+
+  <button class="btn btn-primary">Save</button>
+
+</form>

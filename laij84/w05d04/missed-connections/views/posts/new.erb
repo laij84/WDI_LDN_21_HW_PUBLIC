@@ -18,14 +18,16 @@
     <input type="time" name="post[time]" placeholder="Time" class="form-control">
   </div>
 
-
-  <% @stations.each do |station| %>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" name="post[station_ids][]" value="<%= station.id %>">
-        <%= station.name %>
-      </label>
-    </div>
+  <% @lines.each do |line| %>
+  <%= line.name %>
+    <% @stations.each do |station| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="post[station_ids][]" value="<%= station.id %>">
+          <%= station.name %> 
+        </label>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="form-group">
