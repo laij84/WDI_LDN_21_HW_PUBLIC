@@ -2,7 +2,7 @@
 
 #INDEX
 get '/stations' do
-  @stations = Station.all
+  @stations = Station.all.sort
   @users = User.all
   erb :"stations/index"
 end
@@ -24,7 +24,9 @@ end
 
 # SHOW
 get '/stations/:id' do
+  @posts = Post.all
   @station = Station.find(params[:id])
+  @stations = Station.all
   erb :"stations/show"
 end
 

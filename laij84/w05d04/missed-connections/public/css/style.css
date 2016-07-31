@@ -1,4 +1,67 @@
+@font-face {
+    font-family: London-Tube;
+    src: url(/fonts/London-Tube.ttf);
+}
+
+h1,h2,h3,h4 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+* {
+  font-family: London-Tube;
+}
+
 div.thumbnail {
   height: 400px;
   overflow: hidden;
+}
+
+#headerLogo, #headerTitle {
+  display: inline-block;
+}
+
+#headerLogo img {
+  height:75px;
+}
+
+#headerLogo {
+  padding: 10px 0px;
+}
+
+#headerTitle {
+  vertical-align: middle;
+  padding-left: 10px
+}
+
+.nav, .navbar {
+  background-color: #2D3039;
+
+}
+.navbar {
+  border-radius: 0px;
+}
+.navbar-brand {
+  color: white !important;
+}
+
+#navImg {
+  display:inline-block;
+  float:left;
+  margin-right:10px;
+}
+
+#navImg img {
+  height:50px;
+}
+
+ul.nav li a {
+  color: #6CC !important;
+}
+
+ul.nav li a:hover {
+  color: white !important;
 }

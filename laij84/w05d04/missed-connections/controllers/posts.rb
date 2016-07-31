@@ -2,7 +2,6 @@
 
 #INDEX
 get '/posts' do
-  flash[:success] = "TEST FLASH"
   @posts = Post.all
   @users = User.all
   erb :"posts/index"

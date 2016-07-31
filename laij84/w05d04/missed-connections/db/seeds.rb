@@ -142,8 +142,8 @@ south_wimbledon = Station.create(name: "South Wimbledon")
 morden = Station.create(name: "Morden")
 
 post1.stations = [bank]
-post2.stations = [holborn]
-post3.stations = [oxford_circus, liverpool_street]
+post2.stations = [bank, holborn]
+post3.stations = [bank, oxford_circus, liverpool_street]
 
 central_line = Line.create(name: "Central Line")
 northern_line = Line.create(name: "Northern Line")

@@ -1,4 +1,4 @@
-<h2>Index</h2>
+<h2>Stations</h2>
 
 <div class="row">
   <% @stations.each do |station| %>
@@ -15,3 +15,5 @@
     </div>
   <% end %>
 </div >
+
+@memberships.sort_by!{ |m| m.group.name.downcase }

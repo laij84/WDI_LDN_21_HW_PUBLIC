@@ -9,10 +9,17 @@
               <%= @station.name %>  
             </a>
           </h2>
-
+              <p>
+              <% @station.posts.each do |p| %><br>
+              <a href="/posts/<%= p.id %>"><%= p.date.strftime("%m/%d/%Y") %> - <%= p.title %></a>
+              <% end %>
+              </p>
+    
           <p><a href="/stations/<%= @station.id %>/edit" class="btn btn-primary" role="button">Edit</a> 
-          <a href="#" class="btn btn-default" role="button">Button</a></p>
+
         </div>
       </div>
     </div>
 </div >
+
+
