@@ -4,7 +4,7 @@
         <div class="caption">
           <h2><%= @post.title %></h2>
           <h3><%= @post.stations.map { |station| station.name }.join(", ") %></h3>
-          <p>@<%= @post.user.username %></p>
+          <p><a href="mailto:<%= @post.user.email %>">@<%= @post.user.username %></a></p>
           <p>When: <%= @post.date.strftime("%m/%d/%Y") %>, <%= @post.time.strftime("%I:%M%p") %></p>
           <p><%= @post.description %></p> 
 

@@ -3,7 +3,6 @@ get '/register' do
   erb :"authentications/register"
 end
 
-
 post '/register' do
   @user = User.create(params[:user])
   if @user.save

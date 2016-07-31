@@ -7,15 +7,18 @@
     <input name="post[title]" placeholder="Title" class="form-control" value="<%= @post.title %>">
   </div>
 
-  <div class="form-group">
+ <div class="form-group">
     <textarea name="post[description]" placeholder="Description" class="form-control"><%= @post.description %></textarea>
   </div>
 
-  <div class="form-group">
+
+  <div class="input-group form-group">
+  <div class="input-group-addon">Date of Connection</div>
     <input type="date" name="post[date]" placeholder="Date: " class="form-control" value="<%= @post.date %>">
   </div>
 
-  <div class="form-group">
+  <div class="input-group form-group">
+  <div class="input-group-addon">Time of Connection (24 hour format)</div>
     <input type="time" name="post[time]" placeholder="Time" class="form-control" value="<%= @post.time.strftime('%H:%M') %>">
   </div>
 
@@ -23,7 +26,7 @@
 
   <% @lines.each do |line| %>
     <div class="col-md-6">
-    <%= line.name %>
+    <h4><%= line.name %></h4>
       <% line.stations.each do |s| %>
         <div class="checkbox">
           <label>
