@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -14,8 +14,10 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="/posts/new">New Post</a></li>
           <li><a href="/posts">Posts</a></li>
-          <li><a href="/posts/new">New</a></li>
+          <li><a href="/stations">Stations</a></li>
+    
 
           <% if is_logged_in? %>
             <li><a href="/logout">Logout</a></li>

@@ -19,15 +19,17 @@
   </div>
 
   <% @lines.each do |line| %>
-  <%= line.name %>
-    <% @stations.each do |station| %>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="post[station_ids][]" value="<%= station.id %>">
-          <%= station.name %> 
-        </label>
-      </div>
-    <% end %>
+    <div class="col-md-6">
+    <%= line.name %>
+      <% line.stations.each do |s| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="post[station_ids][]" value="<%= s.id %>">
+            <%= s.name %> 
+          </label>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <div class="form-group">

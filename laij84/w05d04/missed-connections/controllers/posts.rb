@@ -36,6 +36,7 @@ get '/posts/:id/edit' do
   @user_id = session[:user_id]
   @post = Post.find(params[:id])
   @stations = Station.all
+  @lines = Line.all
   erb :"posts/edit"
 end
 

@@ -37,8 +37,8 @@ div.thumbnail {
   padding-left: 10px
 }
 
-.nav, .navbar {
-  background-color: #2D3039;
+nav {
+  background: #2D3039 !important;
 
 }
 .navbar {
@@ -64,4 +64,26 @@ ul.nav li a {
 
 ul.nav li a:hover {
   color: white !important;
+}
+
+textarea {
+  min-height: 100px !important;
+  max-width: 100% !important;
+}
+
+@media screen and (max-width: 992px) {
+    #headerLogo, #navImg {
+        display: none;
+    }
+
+    #headerTitle {
+      padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+  .container.siteHeader {
+      text-align: center;
+  }
 }

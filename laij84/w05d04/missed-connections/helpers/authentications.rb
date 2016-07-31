@@ -16,9 +16,9 @@ helpers do
   end
 
   def authorized_user!
-    current_user = User.find(session[:user_id])
-    post = Post.find(params[:id])
-    unless is_logged_in? && post.user_id == current_user.id
+    @current_user = User.find(session[:user_id])
+    @post = Post.find(params[:id])
+    unless is_logged_in? && @post.user_id == @current_user.id
       flash[:danger] = "You cannot edit/delete this page."
       redirect '/login'
     end

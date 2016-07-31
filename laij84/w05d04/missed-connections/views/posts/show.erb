@@ -1,21 +1,17 @@
-<h2>Show</h2>
-
 <div class="row">
     <div class="">
       <div class="thumbnail">
         <div class="caption">
-          <h2>
-            <a href="/posts/<%= @post.id %>">
-              <%= @post.title %>  
-            </a>
-          </h2>
+          <h2><%= @post.title %></h2>
           <h3><%= @post.stations.map { |station| station.name }.join(", ") %></h3>
           <p>@<%= @post.user.username %></p>
           <p>When: <%= @post.date.strftime("%m/%d/%Y") %>, <%= @post.time.strftime("%I:%M%p") %></p>
           <p><%= @post.description %></p> 
 
+          <% if is_logged_in? && @post.user_id == @current_user.id %>
           <p><a href="/posts/<%= @post.id %>/edit" class="btn btn-primary" role="button">Edit</a> 
           <a href="#" class="btn btn-default" role="button">Button</a></p>
+          <% end %>
         </div>
       </div>
     </div>

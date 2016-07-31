@@ -18,6 +18,24 @@ user1 = User.create(
   password: "password",
   password_confirmation: "password")
 
+user2 = User.create(
+  username: "jsmith123",
+  first_name: "John",
+  last_name: "Smith",
+  phone: "07777777777",
+  email: "johnsmith@something.com",
+  password: "password",
+  password_confirmation: "password")
+
+user3 = User.create(
+  username: "saltyolive",
+  first_name: "Olive",
+  last_name: "Snook",
+  phone: "07777777777",
+  email: "olivesnook@something.com",
+  password: "password",
+  password_confirmation: "password")
+
 post1 = Post.create(
   title: "Greek guy who helped me out of bank tube",     
   description: "I am Kitty - the girl who looked very lost at Bank tube on my way to a first date. I was wearing a blue shirt dress and cream heels. I was just back from living in Nigeria. You were on your way out in Bank then Shoreditch wearing office attire. You walked me out and I really wanted to ask for your number but my date was there - awkward!!!! Hope you’re out there and single!!!",
@@ -38,6 +56,27 @@ post3 = Post.create(
   date: "2016-07-31",
   time: "10:42",
   user_id: 1)
+
+post4 = Post.create(
+  title: "Handsome chap with dark hair",     
+  description: "7.45ish, Northern Line Northbound platform. To the handsome chap with a capacity for prolongued eye contact. We were face to face til the doors opened, you got off as I got on. You kept looking as you walked into the distance down the stairs. I was wearing round gold glasses, black t-shirt, carrying a tweed jacket and a small brown suitcase. If I’d not had a flight to catch, I’d have stopped and talked!",
+  date: "2016-06-23",
+  time: "07:45",
+  user_id: 2)
+
+post5 = Post.create(
+  title: "Ginger guy on the Nothern line to Oxford Circus",     
+  description: "Hi, tall, ginger guy sitting on the northbound Northern line. You were wearing shorts and a greenish long sleeved blouse. I got on at Camden Town, stood next to you and accidentally step on your foot. we both got off at Oxford Circus around 9.30 am on Thursday, 07/07 but I immediately lost track of you. I promise I won’t step on your feet when we’ll go dancing! The brunette, long haired girl wearing glasses, a striped skirt and ballerina flat shoes.",
+  date: "2016-07-07",
+  time: "09:30",
+  user_id: 3)
+
+post6 = Post.create(
+  title: "We met in the Central Line London Tube Underground",     
+  description: "I met a boy with black, curly and short hair, blue eyes and tall in the Central Line Underground towards Newbury Park, in London on Friday night at about 22:30 on 10/6/2016. He was wearing dark blue T-shirt, jeans and metal watch. He also has a skull tattoo on his right arm (bicep). We smiled and looked at each other a few times. Then I got off the tube at Stratford and we waved Goodbye. I would like to see you again.",
+  date: "2016-06-10",
+  time: "22:30",
+  user_id: 2)
 
 #Central Line Stations
 west_ruislip = Station.create(name: "West Ruislip")
@@ -142,8 +181,12 @@ south_wimbledon = Station.create(name: "South Wimbledon")
 morden = Station.create(name: "Morden")
 
 post1.stations = [bank]
-post2.stations = [bank, holborn]
-post3.stations = [bank, oxford_circus, liverpool_street]
+post2.stations = [holborn]
+post3.stations = [oxford_circus, liverpool_street]
+post4.stations = [elephant_castle]
+post5.stations = [camden_town, oxford_circus]
+post6.stations = [oxford_circus]
+
 
 central_line = Line.create(name: "Central Line")
 northern_line = Line.create(name: "Northern Line")

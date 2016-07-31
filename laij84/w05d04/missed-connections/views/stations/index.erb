@@ -7,13 +7,16 @@
         <div class="caption">
           <h2>
             <a href="/stations/<%= station.id %>">
-              <%= station.name %>  
+              <%= station.name %>   
             </a>
-          </h2> 
+          </h2>
+          <% station.posts.each do |p| %>
+            <p>
+              <a href="/posts/<%= p.id %>"><%= p.date.strftime("%m/%d/%Y") %> - <%= p.title %></a>
+            </p>
+          <% end %> 
         </div>
       </div>
     </div>
   <% end %>
 </div >
-
-@memberships.sort_by!{ |m| m.group.name.downcase }
