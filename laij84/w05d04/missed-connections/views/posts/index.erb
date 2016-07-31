@@ -1,3 +1,21 @@
 <h2>Index</h2>
 
-<p>test for Index</p>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h2>
+            <a href="/posts/<%= post.id %>">
+              <%= post.title %>  
+            </a>
+          </h2>
+          <h3><%= post.stations.map { |station| station.name }.join(", ") %></h3>
+          <p>@<%= post.user.username %></p>
+          <p>When: <%= post.date.strftime("%m/%d/%Y") %>, <%= post.time.strftime("%I:%M%p") %></p>
+          <p><%= post.description %></p> 
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div >

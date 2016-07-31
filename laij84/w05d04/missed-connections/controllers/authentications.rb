@@ -1,3 +1,9 @@
+get '/register' do
+  @user = User.new
+  erb :"authentications/register"
+end
+
+
 post '/register' do
   @user = User.create(params[:user])
   if @user.save
@@ -29,3 +35,6 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
+
+

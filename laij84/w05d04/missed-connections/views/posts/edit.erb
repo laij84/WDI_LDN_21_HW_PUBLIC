@@ -1,1 +1,43 @@
-<h1>Edit</h1>
+<h2>Edit Post</h2>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+<input type="hidden" name="_method" value="PUT">
+  
+  <div class="form-group">
+    <input name="post[title]" placeholder="Title" class="form-control" value="<%= @post.title %>">
+  </div>
+
+  <div class="form-group">
+    <textarea name="post[description]" placeholder="Description" class="form-control"><%= @post.description %></textarea>
+  </div>
+
+  <div class="form-group">
+    <input type="date" name="post[date]" placeholder="Date: " class="form-control" value="<%= @post.date %>">
+  </div>
+
+  <div class="form-group">
+    <input type="time" name="post[time]" placeholder="Time" class="form-control" value="<%= @post.time.strftime('%H:%M') %>">
+  </div>
+
+
+  <% @stations.each do |station| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="post[station_ids][]" value="<%= station.id %>"<% if @post.station_ids.include? station.id %> checked<% end %>>
+        <%= station.name %>
+      </label>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <input type="hidden" name="post[user_id]" placeholder="User" class="form-control" value="<%= @user_id %>">
+  </div>
+
+  <button class="btn btn-primary">Save</button>
+
+</form>
+
+
+<form>
+  <button class="btn btn-primary">Save</button>
+</form>

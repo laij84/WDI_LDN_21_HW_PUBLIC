@@ -3,17 +3,23 @@
 #INDEX
 get '/posts' do
   flash[:success] = "TEST FLASH"
+  @posts = Post.all
+  @users = User.all
   erb :"posts/index"
 end
 
 #NEW
 get '/posts/new' do
+  authorize!
   @stations = Station.all
+  @user_id = session[:user_id]
   erb :"posts/new"
 end
 
 # CREATE
 post '/posts' do
+  authorize!
+  @users = User.all
   Post.create(params[:post])
   redirect "/posts"
 end
@@ -26,6 +32,8 @@ end
 
 # EDIT
 get '/posts/:id/edit' do
+  authorized_user!
+  @user_id = session[:user_id]
   @post = Post.find(params[:id])
   @stations = Station.all
   erb :"posts/edit"
@@ -33,7 +41,7 @@ end
 
 # UPDATE
 put '/posts/:id' do
-  authorize!
+  authorized_user!
   post = Post.find(params[:id])
   params[:post][:station_ids] ||= []
   post.update_attributes(params[:post])
@@ -42,7 +50,7 @@ end
 
 # DELETE
 delete '/posts/:id' do
-  authorize!
+  authorized_user!
   post = Post.find(params[:id])
   post.destroy
   redirect "/posts"
