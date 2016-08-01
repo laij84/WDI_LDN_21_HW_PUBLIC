@@ -1,0 +1,12 @@
+<tr>
+  <td><%= link_to country.name, country %></td>
+  <td><%= image_tag country.flag %></td>
+  <td><%= country.size %></td>
+  <td><%= country.population %></td>
+  <td><%= country.language %></td>
+  <td><%= country.currency %></td>
+  <td><%= link_to country.continent.name, country.continent %></td>
+  <td><%= link_to 'Show', country %></td>
+  <td><%= link_to 'Edit', edit_country_path(country) %></td>
+  <td><%= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

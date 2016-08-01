@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @continent.name %></h2>
+
+<%= image_tag @continent.image %>
+
+<br>
+
+<%= link_to 'Edit', edit_continent_path(@continent) %> |
+<%= link_to 'Back', continents_path %>
+
+
+<h2>Countries in this Continent</h2>
+<tbody>
+<%=render @continent.countries %>
+</tbody>
