@@ -1,0 +1,8 @@
+<div class="card">
+  <%= link_to image_tag(location.graffiti_image.thumb.url), location.graffiti_image.url, class: "card-img-top"%>
+  <div class="card-block">
+    <h4 class="card-title"><%= location.name %></h4>
+    <p class="card-text">Last updated <%= distance_of_time_in_words(Time.now, location.created_at) %> ago</p>
+    <a href="/locations/<%=location.id %>" class="btn btn-primary">View</a>
+  </div>
+</div>
