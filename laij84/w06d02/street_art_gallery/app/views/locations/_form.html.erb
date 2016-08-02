@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <fieldset class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+    <%= f.text_field :name, class: "form-control" %>
+  </fieldset>
 
-  <div class="field">
-     <%= f.label :graffiti_image %><br />
-     <%= f.file_field :graffiti_image %>
-   </div>
+  <fieldset class="form-group">
+     <%= f.label :graffiti_image %><br>
+     <%= f.file_field :graffiti_image, class: "form-control-file" %>
+   </fieldset>
 
-   <div class="field">
-     <%= f.label :remote_graffiti_image_url %><br />
-    <%= f.text_field :remote_graffiti_image_url %>
-   </div>
+   <fieldset class="form-group">
+     <%= f.label :remote_graffiti_image_url %><br>
+    <%= f.text_field :remote_graffiti_image_url, class:"form-control" %>
+   </fieldset>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.submit class:"btn btn-primary" %>
+
 <% end %>

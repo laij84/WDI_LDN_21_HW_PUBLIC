@@ -3,6 +3,8 @@
   <div class="card-block">
     <h4 class="card-title"><%= location.name %></h4>
     <p class="card-text">Last updated <%= distance_of_time_in_words(Time.now, location.created_at) %> ago</p>
-    <a href="/locations/<%=location.id %>" class="btn btn-primary">View</a>
+    <%= link_to 'Show', location, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_location_path(location), class: "btn btn-default" %>
+    <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
   </div>
 </div>
