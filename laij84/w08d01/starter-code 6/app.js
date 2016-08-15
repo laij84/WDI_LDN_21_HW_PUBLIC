@@ -23,12 +23,12 @@ Client.collection.drop();
 
 
 var client1 = Client.create({
-name: "Chanse Campbell",
-dob: new Date(1990, 06, 23),
-gender: "male"
+  name: "Chanse Campbell",
+  dob: new Date(1990, 06, 23),
+  gender: "male"
 }, function (err, client1){
-if(err) console.error(err);
-console.log("client created!",client1);
+  if(err) console.error(err);
+  console.log("client1 created!",client1);
 
   var client2 = Client.create({
     name: "Rosanna Rossington",
@@ -36,72 +36,87 @@ console.log("client created!",client1);
     gender: "female"
   }, function (err, client2){
     if(err) console.error(err);
-    console.log("client created!", client2);
+    console.log("client2 created!", client2);
 
     var animal1 = Animal.create({
       name: "Rupert",
-      dob: Date(2009, 09, 15),
+      dob: new Date(2009, 09, 15),
       type: "cat",
-      breed: "British short-haired",
+      breed: "black and white",
       status: "adopted",
       owner: client1
     }, function (err, animal1){
       if(err) console.error(err);
       console.log("animal1 created!", animal1);
 
-      var shelter = Shelter.create({
-        name: "Jason's Animal Shelter",
-        animals: [animal1],
-        clients: [client1,client2]
-      }, function(err,shelter) {
+      var animal2 = Animal.create({
+        name: "Cedric",
+        dob: new Date(2015, 11, 25),
+        type: "cat",
+        breed: "tabby",
+        status: "adopted",
+        owner: client2
+      }, function (err, animal2){
         if(err) console.error(err);
-        console.log("shelter created!",shelter);
+        console.log("animal2 created!", animal2);
 
-      }); //end of Shelter Create Callback
+        var animal3 = Animal.create({
+          name: "Bob",
+          dob: new Date(2015, 11, 25),
+          type: "dog",
+          breed: "Scottish terrier",
+          status: "adopted",
+          owner: client1
+        }, function (err, animal3){
+          if(err) console.error(err);
+          console.log("animal3 created!", animal3);
+
+          var animal4 = Animal.create({
+            name: "Henry",
+            dob: new Date(2015, 11, 25),
+            type: "dog",
+            breed: "pug",
+            status: "adopted",
+            owner: client2
+          }, function(err, animal4){
+            if(err) console.error(err);
+            console.log("animal4 created!", animal4);
+
+            var animal5 = Animal.create({
+              name: "Polly",
+              dob: Date(2005, 5, 12),
+              type: "parrot",
+              breed: "cockatoo",
+              status: "orphaned",
+            }, function(err, animal5){
+              if(err) console.error(err);
+              console.log("animal5 created!", animal5);
+
+              var animal6 = Animal.create({
+                name: "Mongo",
+                dob: new Date(2005, 5, 12),
+                type: "mongoose",
+                breed: "mongoose",
+                status: "orphaned",
+              }, function(err, animal6){
+                if(err) console.error(err);
+                console.log("animal6 created!", animal6);
+
+                var shelter = Shelter.create({
+                  name: "Jason's Animal Shelter",
+                  animals: [animal1, animal2, animal3, animal4, animal5, animal6],
+                  clients: [client1,client2]
+                }, function(err,shelter) {
+                  if(err) console.error(err);
+                  console.log("shelter created!",shelter);
+
+                }); //end of Shelter Create Callback
+              });//end of Animal6 Create Callback
+            });//end of Animal5 Create Callback
+          });//end of Animal4 Create Callback
+        });//end of Animal3 Create Callback
+      });//end of Animal2 Create Callback
     });//end of Animal1 Create Callback
   }); //end of Client2 Create Callback
 }); //end of Client1 Create Callback
 
-
-
-
-// var shelter = new Shelter({
-//   name: "Jason's Animal Shelter",
-//   animals: [],
-//   clients: []
-// });
-
-// shelter.save(function(err, shelter) {
-//   if(err) return console.log(err);
-//   console.log("shelter saved!", shelter);
-
-//   // Create your clients (in the shelter create callback)
-
-//   var client1 = new Client({
-//     name: "John Smith",
-//     dob: new Date(1990, 01, 01),
-//     gender: "male";
-//   }); //end of new Client1
-
-//   client1.save(function(err, client1) {
-//     if(err) return console.log(err);
-//     console.log("client1 saved!", client1);
-
-//     var client2 = new Client({
-//       name: "Jane Doe",
-//       dob: new Date(1984, 06, 23),
-//       gender: "female";
-//     });//end of new Client2
-
-//     client2.save(function(err, client2))
-
-//   }); //end of client1.save
-
-// }); //end of shelter.save
-
-
-
-
-    // Create your animals (in the client create callback)
-
-      // Bonus tasks (in the animal create callback)
