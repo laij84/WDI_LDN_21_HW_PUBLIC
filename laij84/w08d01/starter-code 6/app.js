@@ -110,6 +110,30 @@ var client1 = Client.create({
                   if(err) console.error(err);
                   console.log("shelter created!",shelter);
 
+                  Animal.find({type: "dog"}, "name",
+                    function(err, dogs){
+                      if(err) return console.log(err);
+                      console.log(dogs);
+                    });//end of Dogs query method
+
+                  Animal.find({type: "cat", dob: { $gte: new Date(2014, 7, 15) }},
+                    function(err, cats){
+                      if(err) return console.log(err);
+                      console.log(cats);
+                    });//end of cats query method
+
+                  Animal.findOneAndUpdate({type: "parrot"}, {$set:{name:"Chuckles"}}, {new: true},
+                      function(err, parrot){
+                      if(err) return console.log(err);
+                      console.log(parrot);
+                    });//end of parrot query method
+
+                  Animal.findOneAndRemove({type: "mongoose"},
+                      function(err, mongoose){
+                      if(err) return console.log(err);
+                      console.log(mongoose);
+                    });//end of mongoose
+
                 }); //end of Shelter Create Callback
               });//end of Animal6 Create Callback
             });//end of Animal5 Create Callback
