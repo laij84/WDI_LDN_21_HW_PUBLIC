@@ -1,0 +1,21 @@
+{
+  "name": "yearbook-app",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Jason Lai <jase_lai@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/laij84/WDI_LDN_21_HOMEWORK",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.7"
+  }
+}

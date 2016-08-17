@@ -1,0 +1,16 @@
+<h1>Index Page</h1>
+
+<div class="row">
+  <% users.forEach(function(user) { %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="<%= user.image %>" alt="<%= user.name %>">
+          <div class="caption">
+            <h3><%= user.name %></h3>
+            <p><a href="#" class="show-user btn btn-primary" role="button" data-id="<%= user._id %>">View profile</a></p>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+</div>
+

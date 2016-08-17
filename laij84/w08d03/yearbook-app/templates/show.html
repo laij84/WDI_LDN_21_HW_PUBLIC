@@ -1,0 +1,15 @@
+<h1><%= user.name %>'s Profile</h1>
+
+<div class="row">
+  <div class="thumbnail">
+    <img src="<%= user.image %>" alt="<%= user.name %>">
+    <div class="caption">
+      <h3><%= user.name %></h3>
+      <p><a href="<%= user.github %>">Github</a></p>
+      <p><a href="<%= user.twitter %>">Twitter / LinkedIn</a></p>
+      <p><a href="<%= user.portfolio %>"><%= user.portfolio %></a></p>
+      <p><%= user.bio %></p>
+      <p><a href="#" class="show-user btn btn-primary" role="button" data-id="<%= user._id %>">Edit</a></p>
+    </div>
+  </div>
+</div>
