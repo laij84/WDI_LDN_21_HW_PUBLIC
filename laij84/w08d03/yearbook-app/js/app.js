@@ -47,8 +47,7 @@ YearbookApp.getUser = function(){
   });
 }
 
-//NEW
-
+//NEW / CREATE
 YearbookApp.handleForm = function(){
   event.preventDefault();
 
@@ -71,7 +70,19 @@ YearbookApp.handleForm = function(){
   }).done(YearbookApp.getUsers);
 }
 
+//EDIT
+YearbookApp.getEditForm = function (){
+  event.preventDefault();
 
+  var id = $(this).data("id");
+
+  return $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/api/users/"+ id
+  }).done(function(data){
+    YearbookApp.getTemplate("edit", { user: data });
+  });
+}
 
 //Event Handler 
 YearbookApp.initEventHandlers = function(){
@@ -82,6 +93,7 @@ YearbookApp.initEventHandlers = function(){
     YearbookApp.getTemplate("new");
   });
   $("main").on("submit", "form", this.handleForm); //for new page submit
+  $("main").on("click", "a.edit-user", this.getEditForm);
 }
 
 
