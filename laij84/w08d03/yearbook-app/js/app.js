@@ -84,6 +84,17 @@ YearbookApp.getEditForm = function (){
   });
 }
 
+//DELETE
+YearbookApp.deleteUser = function(){
+  event.preventDefault();
+  var id = $(this).data("id");
+
+  return $.ajax({
+    method: "DELETE",
+    url: "http://localhost:3000/api/users/"+ id
+  }).done(YearbookApp.getUsers);
+}
+
 //Event Handler 
 YearbookApp.initEventHandlers = function(){
   $("main").on("click", "a.show-user", this.getUser);
@@ -94,6 +105,7 @@ YearbookApp.initEventHandlers = function(){
   });
   $("main").on("submit", "form", this.handleForm); //for new page submit
   $("main").on("click", "a.edit-user", this.getEditForm);
+  $("main").on("click", "a.delete-user", this.deleteUser);
 }
 
 
