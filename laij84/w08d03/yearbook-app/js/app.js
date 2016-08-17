@@ -47,8 +47,33 @@ YearbookApp.getUser = function(){
   });
 }
 
-//Event Handler
+//NEW
 
+YearbookApp.handleForm = function(){
+  event.preventDefault();
+
+//disable button when clicked to prevent user clicking
+  $(this).find("button").prop('disabled', true);
+
+  var data = $(this).serialize();
+  var method = $(this).attr("method");
+  var url = "http://localhost:3000/api/users";
+
+  if (method === "PUT") {
+    var id = $(this).find('input[name=_id]').val();
+    url += "/"+id;
+  } 
+
+  $.ajax({
+    url: url,
+    method: method,
+    data: data
+  }).done(YearbookApp.getUsers);
+}
+
+
+
+//Event Handler 
 YearbookApp.initEventHandlers = function(){
   $("main").on("click", "a.show-user", this.getUser);
   $("a.navbar-brand").on("click", this.getUsers); //navbar back to index page
@@ -56,6 +81,7 @@ YearbookApp.initEventHandlers = function(){
     event.preventDefault();
     YearbookApp.getTemplate("new");
   });
+  $("main").on("submit", "form", this.handleForm); //for new page submit
 }
 
 
