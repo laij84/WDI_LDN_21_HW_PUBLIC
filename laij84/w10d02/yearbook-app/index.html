@@ -9,9 +9,58 @@
   <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-  <main class="container" ng-controller="usersController as users">
+<body ng-controller="usersController as users">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">WDI21 Yearbook</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#" ng-click="users.toggleNewForm()">Add Student</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
   <h1>WDI21 Yearbook</h1>
+
+  <div ng-show="users.newForm">
+    <form>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Name" name="name" ng-model="users.newUser.name">
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Image URL" name="image" ng-model="users.newUser.image">
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Github" name="github" ng-model="users.newUser.github">
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Twitter" name="twitter" ng-model="users.newUser.twitter">
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Portfolio" name="portfolio" ng-model="users.newUser.portfolio">
+      </div>
+
+      <div class="form-group">
+        <textarea class="form-control" type="text" placeholder="Bio" name="bio" ng-model="users.newUser.bio"></textarea>
+      </div>
+    </form> 
+    <p><button class="btn btn-primary" ng-click="users.addUser()">Add</button></p> 
+  </div>
 
   <div class="row">
         <div class="col-sm-6 col-md-4" ng-repeat="user in users.all" ng-hide="users.selectedUser">
@@ -25,28 +74,56 @@
         </div>
   </div>
 
-<div ng-show="users.selectedUser">
-  <h1>{{users.selectedUser.name}}'s Profile</h1>
+  <div ng-show="users.selectedUser">
+    <h1>{{users._selectedUser.name}}'s Profile</h1>
 
-  <div class="row">
-    <div class="thumbnail">
-      <img src="{{users.selectedUser.image}}" alt="{{users.selectedUser.name}}">
-      <div class="caption">
-        <h3>{{users.selectedUser.name}}</h3>
-        <p><a href="{{users.selectedUser.github}}">Github</a></p>
-        <p><a href="{{users.selectedUser.twitter}}">Twitter / LinkedIn</a></p>
-        <p><a href="{{users.selectedUser.portfolio}}">{{users.selectedUser.portfolio}}</a></p>
-        <p>{{users.selectedUser.bio}}</p>
-        <p>
-          <button class="btn btn-primary">Edit</button>
-          <button class="btn btn-danger">Delete</button>
-          <button class="btn btn-default" ng-click="users.resetUser()">Back</button>
-        </p>
+    <div class="row">
+      <div class="thumbnail">
+        <img src="{{users._selectedUser.image}}" alt="{{users._selectedUser.name}}">
+        <div class="caption">
+          <h3>{{users._selectedUser.name}}</h3>
+          <p><a href="{{users._selectedUser.github}}">Github</a></p>
+          <p><a href="{{users._selectedUser.twitter}}">Twitter / LinkedIn</a></p>
+          <p><a href="{{users._selectedUser.portfolio}}">{{users._selectedUser.portfolio}}</a></p>
+          <p>{{users._selectedUser.bio}}</p>
+          <div ng-show="users.editForm">
+            <form>
+              <div class="form-group">
+                <input class="form-control" type="text" name="name" ng-model="users.selectedUser.name">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="image" ng-model="users.selectedUser.image">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="github" ng-model="users.selectedUser.github">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="twitter" ng-model="users.selectedUser.twitter">
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="portfolio" ng-model="users.selectedUser.portfolio">
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" type="text" name="bio" ng-model="users.selectedUser.bio"></textarea>
+              </div>
+            </form> 
+            <p><button class="btn btn-primary" ng-click="users.updateUser()">Update</button></p> 
+          </div>
+
+          <p>
+            <button class="btn btn-primary" ng-click="users.toggleEditForm()">Edit</button>
+            <button class="btn btn-danger" ng-click="users.deleteUser(users._selectedUser)">Delete</button>
+            <button class="btn btn-default" ng-click="users.resetUser()">Back</button>
+          </p>  
+        </div>
       </div>
     </div>
   </div>
-</div>
-    
   </main>
 </body>
 </html>
