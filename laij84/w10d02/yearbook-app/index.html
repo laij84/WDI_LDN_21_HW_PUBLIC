@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="YearbookApp">
+<head>
+  <title>WDI21 Yearbook</title>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="controllers/usersController.js"></script>
+  <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <main class="container" ng-controller="usersController as users">
+  <h1>WDI21 Yearbook</h1>
+
+  <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="user in users.all" ng-hide="users.selectedUser">
+          <div class="thumbnail">
+            <img src="{{user.image}}" alt="{{user.name}}">
+            <div class="caption">
+              <h3>{{user.name}}</h3>
+              <p><button class="btn btn-primary" ng-click="users.selectUser(user)">View profile</button></a></p>
+            </div>
+          </div>
+        </div>
+  </div>
+
+<div ng-show="users.selectedUser">
+  <h1>{{users.selectedUser.name}}'s Profile</h1>
+
+  <div class="row">
+    <div class="thumbnail">
+      <img src="{{users.selectedUser.image}}" alt="{{users.selectedUser.name}}">
+      <div class="caption">
+        <h3>{{users.selectedUser.name}}</h3>
+        <p><a href="{{users.selectedUser.github}}">Github</a></p>
+        <p><a href="{{users.selectedUser.twitter}}">Twitter / LinkedIn</a></p>
+        <p><a href="{{users.selectedUser.portfolio}}">{{users.selectedUser.portfolio}}</a></p>
+        <p>{{users.selectedUser.bio}}</p>
+        <p>
+          <button class="btn btn-primary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-default" ng-click="users.resetUser()">Back</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </main>
+</body>
+</html>
