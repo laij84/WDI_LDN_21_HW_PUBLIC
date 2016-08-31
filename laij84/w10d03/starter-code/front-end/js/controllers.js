@@ -11,10 +11,10 @@ function MainController(Character, Episode){
 //Page Controls
   this.charIndex = false;
   this.showCharIndex = function(){
-
     this.charIndex = true;
     this.episodeIndex = false;
     this.newCharForm = false;
+    this.newEpisodeForm = false;
   }
 
   this.episodeIndex = false;
@@ -22,12 +22,21 @@ function MainController(Character, Episode){
     this.episodeIndex = true;
     this.charIndex = false;
     this.newCharForm = false;
-    console.log(Episode.query());
+    this.newEpisodeForm = false;
   }
 
   this.newCharForm = false;
   this.showNewCharForm = function(){
     this.newCharForm = true;
+    this.charIndex = false;
+    this.episodeIndex = false;
+    this.newEpisodeForm = false;
+  }
+
+  this.newEpisodeForm = false;
+  this.showNewEpisodeForm = function(){
+    this.newEpisodeForm = true;
+    this.newCharForm = false;
     this.charIndex = false;
     this.episodeIndex = false;
   }
@@ -87,12 +96,47 @@ function MainController(Character, Episode){
 
   this.selectedEpisode = null;
 
-  this.selectEpisode= function selectEpisode(episode) {
+  this.selectEpisode = function selectEpisode(episode) {
+    console.log(episode);
     this.selectedEpisode = Episode.get({ id: episode._id });
   }
 
   this.deselectEpisode = function deselectEpisode() {
     this.selectedEpisode = null;
+  }
+
+// UPDATE EPISODE
+  this.updateEpisode = function updateEpisode() {
+    self.selectedEpisode.$update(function(updatedEpisode) {
+      console.log(updatedEpisode);
+      var index = self.episodeAll.findIndex(function(episode) {
+        console.log(episode)
+        return episode._id === updatedEpisode._id;
+      });
+
+      self.episodeAll.splice(index, 1, updatedEpisode);
+      self.selectedEpisode = null;
+    });
+  }
+
+//DELETE Episode
+  this.deleteEpisode = function deleteEpisode(episode) {
+    episode.$delete(function() {
+      var index = self.episodeAll.indexOf(episode);
+      self.episodeAll.splice(index, 1);
+      self.deselectEpisode();
+    });
+  }
+
+// CREATE CHARACTER 
+  this.newEpisode = {};
+  this.addEpisode = function addEpisode() {
+    Episode
+      .save(self.newEpisode, function(episode) {
+        self.episodeAll.push(episode);
+        self.newEpisode = {};
+        self.showEpisodeIndex();
+      });
   }
 
 }

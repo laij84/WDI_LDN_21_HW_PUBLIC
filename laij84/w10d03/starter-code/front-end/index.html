@@ -41,6 +41,9 @@
         <li>
           <a href="#" ng-click="main.showEpisodeIndex()">Episodes</a>
         </li>
+        <li>
+          <a href="#" ng-click="main.showNewEpisodeForm()">Add Episode</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -75,15 +78,15 @@
             <div class="caption">
               <h3>Edit Details</h3>
               <form ng-submit="main.updateCharacter()">
-              <div class="form-group">
-                <input class="form-control" type="text" ng-model="main.selectedCharacter.name" placeholder="Name">    
-              </div>
-              <div class="form-group">
-                <input class="form-control" type="text" ng-model="main.selectedCharacter.lightsaber" placeholder="Lightsaber colour">    
-              </div>
-              <p>
-                <button type="submit" class="btn btn-primary">Update</button>
-              </p>
+                <div class="form-group">
+                  <input class="form-control" type="text" ng-model="main.selectedCharacter.name" placeholder="Name">    
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" ng-model="main.selectedCharacter.lightsaber" placeholder="Lightsaber colour">    
+                </div>
+                <p>
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </p>
               </form>
 
               <p>
@@ -99,6 +102,7 @@
     <!-- New Character -->
 
     <div ng-show="main.newCharForm">
+      <h2>Add New Character</h2>
       <form ng-submit="main.addCharacter()">
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Name" ng-model="main.newCharacter.name">
@@ -112,9 +116,8 @@
 
     <!-- Show Episodes -->
     <div ng-show="main.episodeIndex">
-    <h2>EPISODES</h2>
-
-      <div class="panel-group" id="accordion">
+      <h2>Episodes</h2>
+      <div class="panel-group" id="accordion" ng-hide="main.selectedEpisode">
           <div class="panel panel-default" ng-repeat="episode in main.episodeAll">
               <div class="panel-heading">
                    <h4 class="panel-title">
@@ -130,11 +133,59 @@
                     <p>Name: {{episode.name}}</p>
                     <p>Release Date: {{episode.release_date}}</p>
                     <p>Director: {{episode.director}}</p>
-                    <p>Name: {{episode.studio}}</p>
+                    <p>Studio: {{episode.studio}}</p>
+                    <button class="btn btn-primary" ng-click="main.selectEpisode(episode )">Edit</button>
                   </div>
               </div>
           </div>
+        </div>
 
+    <!-- Update Episode Form -->
+        <div ng-show="main.selectedEpisode">
+        <h2>Form</h2>
+          <form ng-submit="main.updateEpisode()">
+            <div class="form-group">
+              <input class="form-control" type="text" ng-model="main.selectedEpisode.name" placeholder="Name">    
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" ng-model="main.selectedEpisode.release_date" placeholder="Release Date">    
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" ng-model="main.selectedEpisode.director" placeholder="Director">    
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" ng-model="main.selectedEpisode.studio" placeholder="Studio">    
+            </div>
+            <p>
+              <button type="submit" class="btn btn-primary">Update</button>
+            </p>
+          </form>
+          <p>
+            <button type="submit" class="btn btn-default" ng-click="main.deleteEpisode(main.selectedEpisode)">Delete</button>
+            <button type="submit" class="btn btn-default" ng-click="main.deselectEpisode()">Back</button>
+          </p>
+        </div>
+    </div>
+
+    <!-- New Episode -->
+
+    <div ng-show="main.newEpisodeForm">
+      <h2>Add New Episode</h2>
+      <form ng-submit="main.addEpisode()">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Name" ng-model="main.newEpisode.name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Release date" ng-model="main.newEpisode.release_date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Director" ng-model="main.newEpisode.director">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Studio" ng-model="main.newEpisode.studio">
+        </div>
+        <button class="btn btn-primary">Add</button>
+      </form>
     </div>
 
 
