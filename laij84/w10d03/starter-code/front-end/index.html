@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="lightsaberApp">
+<head>
+  <title>The Lightsaber Database</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/controllers.js"></script>
+  <script type="text/javascript" src="./js/models/character.js"></script>
+  <script type="text/javascript" src="./js/models/episode.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+  <main ng-controller="MainController as main">
+
+    <h1>The Lightsaber Database</h1>
+    
+    <ul>
+    <!-- <li>Luke's lightsaber is <span class="blue">Blue</span></li> -->
+      <li ng-repeat="character in main.characterAll">{{character.name}}, lightsaber: {{character.lightsaber}}</li>
+    </ul>
+  </main>
+</body>
+</html>
