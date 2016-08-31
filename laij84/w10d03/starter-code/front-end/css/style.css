@@ -50,3 +50,11 @@ span {
 .purple { color: purple; }
 .red    { color: red;    }
 .white  { background: black; }
+
+.profile {
+  /*object-fit: fill;*/
+  /*object-fit: none;*/
+  object-fit: cover;
+  height:200px;
+  width:200px;
+}

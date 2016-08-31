@@ -18,7 +18,9 @@
     
     <ul>
     <!-- <li>Luke's lightsaber is <span class="blue">Blue</span></li> -->
-      <li ng-repeat="character in main.characterAll">{{character.name}}, lightsaber: {{character.lightsaber}}</li>
+      <li ng-repeat="character in main.characterAll">{{character.name}}, lightsaber: {{character.lightsaber}}
+      <img class="profile" src="./images/{{character.name}}.jpg">
+      </li>
     </ul>
   </main>
 </body>
