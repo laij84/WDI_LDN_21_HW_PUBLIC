@@ -124,7 +124,7 @@ function MainController(Character, Episode){
     episode.$delete(function() {
       var index = self.episodeAll.indexOf(episode);
       self.episodeAll.splice(index, 1);
-      self.deselectEpisode();
+      self.selectedEpisode = null;
     });
   }
 

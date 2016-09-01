@@ -1,8 +1,13 @@
 /* Structure */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,600,600italic,300italic);
 
+@font-face {
+    font-family: "starwars";
+    src: url("../fonts/Starjedi.ttf");
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'starwars', sans-serif;
   font-weight: 300;
   font-size: 16px;
   /*max-width: 700px;*/
@@ -35,6 +40,7 @@ h1:after {
   overflow: hidden;
   display: block;
   content: url("https://cloud.githubusercontent.com/assets/40461/9619026/70d2a39c-5103-11e5-8c7f-394c99b321ef.png");
+  font-family: "starwars" !important;
 }
 
 span { 
