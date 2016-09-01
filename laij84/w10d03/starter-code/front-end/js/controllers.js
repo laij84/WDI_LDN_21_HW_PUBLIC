@@ -9,7 +9,7 @@ function MainController(Character, Episode){
   var self = this;
 
 //Page Controls
-  this.charIndex = false;
+  this.charIndex = true;
   this.showCharIndex = function(){
     this.charIndex = true;
     this.episodeIndex = false;
@@ -68,7 +68,6 @@ function MainController(Character, Episode){
 // UPDATE CHARACTER
   this.updateCharacter = function updateCharacter() {
     self.selectedCharacter.$update(function(updatedCharacter) {
-      console.log(updatedCharacter);
       var index = self.characterAll.findIndex(function(character) {
         console.log(character)
         return character._id === updatedCharacter._id;
@@ -79,13 +78,14 @@ function MainController(Character, Episode){
     });
   }
 
-//DELETE CHARACTER
+  //DELETE CHARACTER
   this.deleteCharacter = function deleteCharacter(character) {
-    character.$delete(function() {
-      var index = self.characterAll.indexOf(character);
+    this.selectedCharacter.$delete(function() {
+      var index = self.characterAll.findIndex(function(character) {
+        return self.selectedCharacter._id === character._id;
+      });
 
       self.characterAll.splice(index, 1);
-      console.log(self.selectedCharacter);
       self.selectedCharacter = null;
     });
   }
@@ -120,15 +120,19 @@ function MainController(Character, Episode){
   }
 
 //DELETE Episode
-  this.deleteEpisode = function deleteEpisode(episode) {
-    episode.$delete(function() {
-      var index = self.episodeAll.indexOf(episode);
+  this.deleteEpisode = function deleteEpisode() {
+    this.selectedEpisode.$delete(function() {
+      var index = self.episodeAll.findIndex(function(episode) {
+        console.log(episode)
+        return self.selectedEpisode._id === episode._id;
+      });
+
       self.episodeAll.splice(index, 1);
       self.selectedEpisode = null;
     });
   }
 
-// CREATE CHARACTER 
+// CREATE Episode 
   this.newEpisode = {};
   this.addEpisode = function addEpisode() {
     Episode

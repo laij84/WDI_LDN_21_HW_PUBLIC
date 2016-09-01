@@ -57,7 +57,7 @@
       <div class="row" ng-hide="main.selectedCharacter">
         <div class="col-sm-6 col-md-4" ng-repeat="character in main.characterAll">
           <div class="thumbnail">
-            <img class ="profile" src="./images/{{character.name}}.jpg" alt="{{character.name}}">
+            <img class ="profile" ng-src="./images/{{character.name}}.jpg" alt="{{character.name}}">
             <div class="caption">
               <h3>{{character.name}}</h3>
               <p>Lightsaber colour: {{character.lightsaber}}</p>
@@ -74,7 +74,7 @@
       <div class="row" ng-show="main.selectedCharacter">
         <div class="col-md-6 col-md-offset-3">
           <div class="thumbnail">
-            <img src="./images/{{main.selectedCharacter.name}}.jpg" alt="{{main.selectedCharacter.name}}">
+            <img ng-src="./images/{{main.selectedCharacter.name}}.jpg" alt="{{main.selectedCharacter.name}}">
             <div class="caption">
               <h3>Edit Details</h3>
               <form ng-submit="main.updateCharacter()">
@@ -161,7 +161,7 @@
             </p>
           </form>
           <p>
-            <button type="submit" class="btn btn-default" ng-click="main.deleteEpisode(main.selectedEpisode)">Delete</button>
+            <button type="submit" class="btn btn-default" ng-click="main.deleteEpisode()">Delete</button>
             <button type="submit" class="btn btn-default" ng-click="main.deselectEpisode()">Back</button>
           </p>
         </div>
