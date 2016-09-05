@@ -1,0 +1,15 @@
+<h1>Countries</h1>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="country in countries.all">
+    <div class="thumbnail">
+      <!-- <img src="..." alt="..."> -->
+      <div class="caption">
+        <h3>{{country.name}}</h3>
+        <p>Capital: {{country.capital}}</p>
+        <p>Population: {{country.population}}</p>
+        <p><button class="btn btn-primary" ng-click="countries.selectCountry(country)" ui-sref="country">View</button>
+      </div>
+    </div>
+  </div>
+</div>
