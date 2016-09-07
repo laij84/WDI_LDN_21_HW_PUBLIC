@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="oAuthApp">
+<head>
+  <title>oAuth</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
+  <script src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="/js/client.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body ng-controller="MainController as main">
+
+  <h1>oAuth</h1>
+
+  <button ng-click="main.authenticate('github')">Sign in with GitHub</button>
+
+  <button ng-click="main.authenticate('facebook')">Sign in with Facebook</button>
+  <img ng-src="{{main.currentUser.avatar}}">
+
+</body>
+</html>
