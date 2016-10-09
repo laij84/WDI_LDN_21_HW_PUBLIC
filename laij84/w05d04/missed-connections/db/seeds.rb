@@ -19,7 +19,7 @@ user1 = User.create(
   password_confirmation: "password")
 
 user2 = User.create(
-  username: "jsmith123",
+  username: "cjames",
   first_name: "John",
   last_name: "Smith",
   phone: "07777777777",

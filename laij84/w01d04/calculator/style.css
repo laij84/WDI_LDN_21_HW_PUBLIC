@@ -1,3 +1,6 @@
+*:focus {
+outline: none;
+}
 
 body {
   background-image: url("https://assets.about.me/background/users/r/o/b/robertsjason_1417301700_39.jpg");

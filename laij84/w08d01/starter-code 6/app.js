@@ -134,6 +134,16 @@ var client1 = Client.create({
                       console.log(mongoose);
                     });//end of mongoose
 
+                  Animal.find({status: "orphaned"}).sort({dob: 1}).exec(function(err,animals){
+                    if(err) return console.log(err);
+                    console.log(animals);
+                  });
+
+                  Animal.find({$or: [ {type: "dog"}, {type: "cat"} ] }).sort({name: 1}).exec(function(err,animals){
+                    if(err) return console.log(err);
+                    console.log("cat and dog ascending",animals);
+                  });
+
                 }); //end of Shelter Create Callback
               });//end of Animal6 Create Callback
             });//end of Animal5 Create Callback

@@ -31,13 +31,13 @@ function Router($stateProvider, $urlRouterProvider){
     })
     .state("countries", {
       url:"/countries",
-      templateUrl: "templates/countries.html",
-      controller:"CountriesController as countries"
+      templateUrl: "templates/countries.html"
+      // controller:"CountriesController as countries"
     })
     .state("country", {
       url:"/country/:id",
-      templateUrl: "templates/country.html",
-      controller:"CountriesController as countries"
+      templateUrl: "templates/country.html"
+      // controller:"CountriesController as countries"
     });
 
     $urlRouterProvider.otherwise("/");

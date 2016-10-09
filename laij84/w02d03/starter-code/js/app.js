@@ -52,12 +52,12 @@ $(function(){
       var $newTweet = $("#new-tweet-input");
       var $dateTime = new Date();
 
-      if($newTweet !== "") {
+      if($newTweet.val() !== "") {
         $('.stream-items').prepend(
 
          '<div class="tweet">' +
          '<a href="#">' +
-         '<img src="' +'http://facehoff.herokuapp.com/50/50'+ '" alt="User image goes here.">'+
+         '<img src="' +'https://placekitten.com/50/50'+ '" alt="User image goes here.">'+
          '</a>'+
          '<div class="content">'+
          '<strong class="fullname">'+'Jason'+'</strong>'+
@@ -73,9 +73,23 @@ $(function(){
          '</li>'
         );
         $newTweet.val("");
+
+        $('#new-tweets-bar').show("slow");
+        setTimeout(function(){
+          $('#new-tweets-bar').hide("slow");
+          },3000);
+
+
+        // $("#new-tweets-bar").fadeIn('slow', function(){
+        //   setTimeout(function(){
+        //     $('#new-tweets-bar').css("display","none");
+        //   },5000);
+        // });
+
+
+
       }
     });
-
 
 
 });
